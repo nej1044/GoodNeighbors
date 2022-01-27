@@ -1,0 +1,95 @@
+{
+  "name": "GoodNeighbors",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint",
+    "generate": "graphql-codegen",
+    "format": "prettier --check"
+  },
+  "dependencies": {
+    "@apollo/client": "3.4.16",
+    "@emotion/native": "^11.0.0",
+    "@emotion/react": "^11.7.1",
+    "@react-native-async-storage/async-storage": "^1.15.14",
+    "@react-native-firebase/app": "^14.2.2",
+    "@react-native-firebase/auth": "^14.2.2",
+    "@react-native-firebase/firestore": "^14.1.0",
+    "@react-native-google-signin/google-signin": "^7.0.4",
+    "@react-navigation/bottom-tabs": "^6.0.9",
+    "@react-navigation/material-top-tabs": "^6.0.6",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
+    "@react-navigation/stack": "6.0.11",
+    "@types/apollo-upload-client": "^14.1.0",
+    "apollo-upload-client": "^17.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "firebase-tools": "^10.0.1",
+    "graphql": "^16.2.0",
+    "graphql-request": "^3.7.0",
+    "iamport-react-native": "^2.0.0-rc.1",
+    "lodash": "^4.17.21",
+    "react": "17.0.2",
+    "react-native": "0.66.4",
+    "react-native-gesture-handler": "2.1.0",
+    "react-native-image-picker": "4.6.1",
+    "react-native-maps": "0.30.1",
+    "react-native-modal": "^13.0.0",
+    "react-native-pager-view": "5.4.9",
+    "react-native-paper": "^4.11.1",
+    "react-native-popup-menu": "^0.15.12",
+    "react-native-read-more-text": "^1.1.2",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.1",
+    "react-native-splash-screen": "3.3.0",
+    "react-native-svg-transformer": "^1.0.0",
+    "react-native-tab-view": "^3.1.1",
+    "react-native-vector-icons": "9.0.0",
+    "react-native-webview": "^11.16.0",
+    "rn-tooltip": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/runtime": "^7.16.5",
+    "@graphql-codegen/cli": "^2.3.0",
+    "@graphql-codegen/typescript": "^2.4.1",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/lodash": "^4.14.178",
+    "@types/react": "^17.0.38",
+    "@types/react-native": "^0.66.11",
+    "@types/react-native-read-more-text": "^1.0.1",
+    "@types/react-native-vector-icons": "6.4.10",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "babel-jest": "^27.4.5",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-native": "^4.0.0",
+    "husky": "4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.1.4",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react-native-typescript-transformer": "^1.2.13",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.5.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npx eslint **/*.{ts,tsx}"
+    ]
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
