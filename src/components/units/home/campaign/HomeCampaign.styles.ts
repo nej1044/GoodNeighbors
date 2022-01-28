@@ -14,7 +14,7 @@ export const SelectionWrapper = styled.View`
 `;
 
 export const SelectionTitle = styled.View`
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +52,8 @@ export const CardTag = styled.View`
 
 export const CardDetails = styled.View`
   /* background-color: blue; */
-  padding: 10px 5px 10px 0px;
+  /* padding: 10px 5px 10px 0px; */
+  padding-top: 15px;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -62,12 +63,15 @@ export const DetailsContent = styled.View`
 `;
 
 export const ContentTitle = styled.Text`
-  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
   color: #000;
 `;
 
 export const ContentRemark = styled.Text`
   color: #000;
+  font-size: 14px;
 `;
 
 export const DetailsBookmark = styled.View``;
@@ -75,7 +79,7 @@ export const DetailsBookmark = styled.View``;
 export const RecommendWrapper = styled.View`
   flex: 1;
   background-color: #fff;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 30px 20px 30px 20px;
 `;
 
@@ -85,11 +89,14 @@ export const RecommendTitle = styled.View`
 
 export const RecommendTitleText = styled.Text`
   color: #000;
+  font-size: 16px;
   font-weight: 700;
 `;
 
 export const UserName = styled.Text`
   color: #448800;
+  font-size: 16px;
+  font-weight: 700;
 `;
 
 export const RecommendList = styled.View`

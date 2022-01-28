@@ -7,21 +7,24 @@ interface IPropsColoredTag {
   padding?: string;
 }
 
-const Tag = styled.Text`
+const Tag = styled.View`
   padding: ${(props: IPropsColoredTag) => props.padding};
   margin-right: 5px;
   border-radius: 40px;
-  text-align: center;
   background-color: #448800;
   align-self: flex-start;
+`;
+
+const TagText = styled.Text`
+  text-align: center;
   color: #ffffff;
   font-size: ${(props: IPropsColoredTag) => props.fontSize};
 `;
 
 const ColoredTag = (props: IPropsColoredTag) => {
   return (
-    <Tag padding={props.padding} fontSize={props.fontSize}>
-      {props.text}
+    <Tag padding={props.padding}>
+      <TagText fontSize={props.fontSize}>{props.text}</TagText>
     </Tag>
   );
 };

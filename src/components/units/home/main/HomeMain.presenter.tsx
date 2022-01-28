@@ -15,23 +15,23 @@ interface IPropsHomeMainUI {
 export default function HomeMainUI(props: IPropsHomeMainUI) {
   return (
     <>
-      <E.SearchWrapper>
-        {/* <E.Logo source={require('../../../../../public/images/logo_green.jpg')} /> */}
-        <E.Bar
+      {/* <E.SearchWrapper> */}
+      {/* <E.Logo source={require('../../../../../public/images/logo_green.jpg')} /> */}
+      {/* <E.Bar
           onPress={() => {
             props.navigation.navigate('homeSearch');
             console.log('aosifdjoaijfs');
           }}
         >
           <Icon name="search" size={20} color="rgba(143, 148, 156, 1)" />
-        </E.Bar>
-      </E.SearchWrapper>
+        </E.Bar> */}
+      {/* </E.SearchWrapper> */}
       <Tab.Navigator
         screenOptions={{
-          tabBarLabelStyle: { fontSize: 12 },
+          tabBarLabelStyle: { fontSize: 14 },
           tabBarActiveTintColor: '#448800',
           tabBarInactiveTintColor: 'rgba(0, 0, 0, 0.4)',
-          tabBarIndicatorStyle: { backgroundColor: '#448800' },
+          tabBarIndicatorStyle: { width: 90, marginLeft: 18, backgroundColor: '#448800' },
           tabBarStyle: {},
         }}
       >

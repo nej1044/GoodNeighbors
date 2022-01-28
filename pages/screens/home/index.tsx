@@ -9,9 +9,12 @@ import HomePayment from '../../../src/components/units/home/homePayment/HomePaym
 import Payment from '../../../src/components/units/home/Payment/index';
 import PaymentResult from '../../../src/components/units/home/complete/index';
 import HomeSearch from '../../../src/components/units/home/search/HomeSearch.container';
+import { Image, Pressable } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 const Stack = createStackNavigator();
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -19,10 +22,24 @@ const HomeScreen = () => {
         component={HomeMain}
         options={() => ({
           headerTitle: '',
+          headerStyle: { height: 60 },
           headerShadowVisible: false,
-          headerTransparent: true,
-          headerTintColor: 'transparent',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerLeft: () => (
+            <Pressable>
+              <Image
+                style={{ height: 40, width: 50, margin: 20 }}
+                source={require('../../../public/images/home/mainLogo.png')}
+              />
+            </Pressable>
+          ),
+          headerRight: () => (
+            <Pressable
+              style={{ flexDirection: 'row' }}
+              onPress={() => navigation.navigate('search')}
+            >
+              <Icon name="search" color="rgba(0,0,0,0.4)" size={25} style={{ padding: 20 }} />
+            </Pressable>
+          ),
         })}
       />
       <Stack.Screen

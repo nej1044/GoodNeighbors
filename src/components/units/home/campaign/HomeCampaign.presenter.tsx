@@ -56,8 +56,8 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                           <ColoredTag
                             key={el._id}
                             text={`#${el.tags[0]}`}
-                            fontSize={'9px'}
-                            padding={'2px 4px 2px 4px'}
+                            fontSize='10px'
+                            padding='4px 8px 4px 8px'
                           />
                           <ClearProgressBar height={'4px'} id={el._id} createdAt={el.createdAt} />
                         </E.CardTag>
@@ -75,7 +75,7 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                             .includes(el._id) ? (
                             <Icon
                               name="bookmark-outline"
-                              size={20}
+                              size={24}
                               color={'rgba(0, 0, 0, 0.4)'}
                               onPress={props.onPressPick(el)}
                             />
@@ -92,7 +92,7 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                     </E.Card>
                   ))
                   .reverse()
-                  .splice(0, 3)}
+                  .splice(0, 4)}
               </ScrollView>
             </E.SelectionList>
           </E.SelectionWrapper>
@@ -134,8 +134,8 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                         <ColoredTag
                           key={el._id}
                           text={`#${el.tags[0]}`}
-                          fontSize={'9px'}
-                          padding={'2px 4px 2px 4px'}
+                          fontSize='10px'
+                          padding='4px 8px 4px 8px'
                         />
                         <ClearProgressBar createdAt={el.createdAt} height={'2px'} id={el._id} />
                       </E.CardTag>

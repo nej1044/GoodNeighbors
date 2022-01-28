@@ -2,10 +2,13 @@ import * as React from 'react';
 import styled from '@emotion/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const ViewMoreWrapper = styled.Pressable``;
+const ViewMoreWrapper = styled.Pressable`
+  align-items: center;
+`;
 
 const ViewMoreTxt = styled.Text`
   padding-right: 20px;
+  color: rgba(147, 147, 147, 1);
 `;
 
 interface IViewMoreButton {
