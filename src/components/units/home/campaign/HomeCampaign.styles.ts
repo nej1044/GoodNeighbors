@@ -80,7 +80,7 @@ export const RecommendWrapper = styled.View`
   flex: 1;
   background-color: #fff;
   margin-top: 10px;
-  padding: 30px 20px 30px 20px;
+  padding: 30px 20px 15px 20px;
 `;
 
 export const RecommendTitle = styled.View`
@@ -102,12 +102,12 @@ export const UserName = styled.Text`
 export const RecommendList = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* background-color: yellow; */
 `;
 
 export const RecommendCard = styled.View`
-  /* background-color: yellowgreen; */
+  width: 160px;
 `;
 
 export const RImageWrpper = styled.Pressable`
@@ -122,7 +122,9 @@ export const RecommendCardDetails = styled.View`
 `;
 
 export const RecommendCardTitle = styled.Text`
+  width: 85%;
   color: #000;
+  font-size: 16px;
   font-weight: 500;
 `;
 

@@ -56,8 +56,8 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                           <ColoredTag
                             key={el._id}
                             text={`#${el.tags[0]}`}
-                            fontSize='10px'
-                            padding='4px 8px 4px 8px'
+                            fontSize="10px"
+                            padding="4px 8px 4px 8px"
                           />
                           <ClearProgressBar height={'4px'} id={el._id} createdAt={el.createdAt} />
                         </E.CardTag>
@@ -134,14 +134,16 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                         <ColoredTag
                           key={el._id}
                           text={`#${el.tags[0]}`}
-                          fontSize='10px'
-                          padding='4px 8px 4px 8px'
+                          fontSize="10px"
+                          padding="4px 8px 4px 8px"
                         />
                         <ClearProgressBar createdAt={el.createdAt} height={'2px'} id={el._id} />
                       </E.CardTag>
                     </E.RImageWrpper>
                     <E.RecommendCardDetails>
-                      <E.RecommendCardTitle>{el.name.split('/')[1]}</E.RecommendCardTitle>
+                      <E.RecommendCardTitle numberOfLines={1} ellipsizeMode="tail">
+                        {el.name.split('/')[1]}
+                      </E.RecommendCardTitle>
                       <E.RecommendBookmark>
                         {!props.dataForPicked?.fetchUseditemsIPicked
                           .map((pick) => pick._id)

@@ -17,9 +17,9 @@ const MainScreen = () => {
         headerShown: false,
         tabBarActiveTintColor: '#448800',
         tabBarStyle: {
-          height: 64,
+          height: 80,
           paddingTop: 10,
-          paddingBottom: 10,
+          paddingBottom: 26,
           paddingLeft: 30,
           paddingRight: 30,
         },
