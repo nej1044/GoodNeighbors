@@ -8,7 +8,6 @@ export const Wrapper = styled.View`
 export const Txt = styled.Text``;
 
 export const SelectionWrapper = styled.View`
-  flex: 1.5;
   padding: 30px 0px 30px 20px;
   background-color: #fff;
 `;
@@ -24,6 +23,7 @@ export const SelectionTitleText = styled.Text`
   font-size: 22px;
   font-weight: 700;
   color: #000;
+  letter-spacing: -0.5px;
 `;
 
 export const SelectionList = styled.View`
@@ -31,7 +31,7 @@ export const SelectionList = styled.View`
 `;
 
 export const Card = styled.View`
-  padding-right: 20px;
+  padding-right: 15px;
   width: 300px;
   /* background-color: lightpink; */
 `;
@@ -72,6 +72,7 @@ export const ContentTitle = styled.Text`
 export const ContentRemark = styled.Text`
   color: #000;
   font-size: 14px;
+  letter-spacing: -0.5px;
 `;
 
 export const DetailsBookmark = styled.View``;
@@ -107,12 +108,11 @@ export const RecommendList = styled.View`
 `;
 
 export const RecommendCard = styled.View`
-  width: 160px;
+  /* padding: 31px 0; */
 `;
 
 export const RImageWrpper = styled.Pressable`
   width: 160px;
-  height: 160px;
 `;
 
 export const RecommendCardDetails = styled.View`
@@ -122,10 +122,10 @@ export const RecommendCardDetails = styled.View`
 `;
 
 export const RecommendCardTitle = styled.Text`
-  width: 85%;
   color: #000;
   font-size: 16px;
   font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
 export const RecommendBookmark = styled.View``;

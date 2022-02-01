@@ -16,7 +16,7 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
               <E.SelectionTitleText>결연 아동</E.SelectionTitleText>
               <ViewMoreButton onPressBtn={() => props.navigation.navigate('childrenList')} />
             </E.SelectionTitle>
-            <ScrollView horizontal={true}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <E.SelectionList>
                 {props.data?.fetchUseditems
                   .map((el) => (
@@ -35,8 +35,8 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                         <E.CardTag>
                           <ColoredTag
                             text={`#${el.tags[el.tags.length - 1]}`}
-                            fontSize={'9px'}
-                            padding={'2px 4px 2px 4px'}
+                            fontSize="8px"
+                            padding="4px 8px"
                           />
                         </E.CardTag>
                       </E.ImgWrapper>
@@ -53,14 +53,14 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                             .includes(el._id) ? (
                             <Icon
                               name="bookmark-outline"
-                              size={20}
+                              size={24}
                               color={'rgba(0, 0, 0, 0.4)'}
                               onPress={props.onPressPickChild(el)}
                             />
                           ) : (
                             <Icon
                               name="bookmark"
-                              size={20}
+                              size={22}
                               color={'#448800'}
                               onPress={props.onPressPickChild(el)}
                             />
@@ -101,14 +101,16 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                       }
                     >
                       <E.ChildName>{el.name.split('/')[1]}</E.ChildName>
-                      <E.ChildBio>{el.remarks}</E.ChildBio>
+                      <E.ChildBio numberOfLines={2} ellipsizeMode="tail">
+                        {el.remarks}
+                      </E.ChildBio>
                       <E.ChildrenTags key={el._id}>
                         {el.tags?.map((el, index) => (
                           <ColoredTag
                             key={index}
                             text={`#${el}`}
-                            fontSize={'9px'}
-                            padding={'2px 4px 2px 4px'}
+                            fontSize='8px'
+                            padding='4px 8px'
                           />
                         ))}
                       </E.ChildrenTags>
@@ -119,14 +121,14 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                         .includes(el._id) ? (
                         <Icon
                           name="bookmark-outline"
-                          size={20}
+                          size={22}
                           color={'rgba(0, 0, 0, 0.4)'}
                           onPress={props.onPressPickChild(el)}
                         />
                       ) : (
                         <Icon
                           name="bookmark"
-                          size={20}
+                          size={22}
                           color={'#448800'}
                           onPress={props.onPressPickChild(el)}
                         />

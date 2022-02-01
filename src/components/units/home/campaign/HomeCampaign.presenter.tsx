@@ -19,7 +19,7 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
               <ViewMoreButton onPressBtn={() => props.navigation.navigate('homelist')} />
             </E.SelectionTitle>
             <E.SelectionList>
-              <ScrollView horizontal={true}>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {props.data?.fetchUseditems
                   .map((el) => (
                     <E.Card key={el._id}>

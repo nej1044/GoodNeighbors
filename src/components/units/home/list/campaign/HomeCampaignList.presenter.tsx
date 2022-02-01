@@ -9,7 +9,7 @@ import { IPropsHomeCampaignListUI } from './HomeCampaignList.types';
 export default function HomeCampaignListUI(props: IPropsHomeCampaignListUI) {
   return (
     <>
-      <ScrollView>
+      <E.Wrapper>
         {props.data?.fetchUseditems.map((el) => (
           <E.ChildrenList key={el._id}>
             <E.ChildImgWrapper
@@ -27,15 +27,12 @@ export default function HomeCampaignListUI(props: IPropsHomeCampaignListUI) {
                 onPress={() => props.navigation.navigate('homeDetails', { useditemId: el._id })}
               >
                 <E.ChildName>{el.name.split('/')[1]}</E.ChildName>
-                <E.ChildBio>{el.remarks}</E.ChildBio>
+                <E.ChildBio numberOfLines={2} ellipsizeMode="tail">
+                  {el.remarks}
+                </E.ChildBio>
                 <E.ChildrenTags key={el._id}>
                   {el.tags?.map((el, index) => (
-                    <ColoredTag
-                      key={index}
-                      text={`#${el}`}
-                      fontSize={'9px'}
-                      padding={'2px 4px 2px 4px'}
-                    />
+                    <ColoredTag key={index} text={`#${el}`} fontSize="8px" padding="4px 8px" />
                   ))}
                 </E.ChildrenTags>
               </E.ChildAbout>
@@ -45,14 +42,14 @@ export default function HomeCampaignListUI(props: IPropsHomeCampaignListUI) {
                   .includes(el._id) ? (
                   <Icon
                     name="bookmark-outline"
-                    size={20}
+                    size={22}
                     color={'rgba(0, 0, 0, 0.4)'}
                     onPress={props.onPressPick(el)}
                   />
                 ) : (
                   <Icon
                     name="bookmark"
-                    size={20}
+                    size={22}
                     color={'#448800'}
                     onPress={props.onPressPick(el)}
                   />
@@ -61,7 +58,7 @@ export default function HomeCampaignListUI(props: IPropsHomeCampaignListUI) {
             </E.ChildDetails>
           </E.ChildrenList>
         ))}
-      </ScrollView>
+      </E.Wrapper>
     </>
   );
 }

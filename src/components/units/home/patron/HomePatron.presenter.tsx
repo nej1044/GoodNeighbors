@@ -19,7 +19,7 @@ export default function HomePatronUI(props: IPropsHomePatronUI) {
               <ViewMoreButton onPressBtn={() => props.navigation.navigate('patronList')} />
             </E.SelectionTitle>
             <E.SelectionList>
-              <ScrollView horizontal={true}>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 {props.data?.fetchUseditems
                   .map((el) => (
                     <E.Card key={el._id}>
@@ -49,8 +49,8 @@ export default function HomePatronUI(props: IPropsHomePatronUI) {
                           <ColoredTag
                             key={el._id}
                             text={`#${el.tags[0]}`}
-                            fontSize={'9px'}
-                            padding={'2px 4px 2px 4px'}
+                            fontSize='8px'
+                            padding='4px 8px'
                           />
                           <ClearProgressBar height={'4px'} id={el._id} createdAt={el.createdAt} />
                         </E.CardTag>
@@ -117,8 +117,8 @@ export default function HomePatronUI(props: IPropsHomePatronUI) {
                         <ColoredTag
                           key={el._id}
                           text={`#${el.tags[0]}`}
-                          fontSize={'9px'}
-                          padding={'2px 4px 2px 4px'}
+                          fontSize='8px'
+                          padding='4px 8px'
                         />
                         <ClearProgressBar height={'2px'} id={el._id} createdAt={el.createdAt} />
                       </E.CardTag>

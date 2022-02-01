@@ -9,7 +9,7 @@ import { IPropsHomePatronListUI } from './HomePatronList.types';
 export default function HomePatronListUI(props: IPropsHomePatronListUI) {
   return (
     <>
-      <ScrollView>
+      <E.Wrapper>
         {props.data?.fetchUseditems.map((el) => (
           <E.ChildrenList key={el._id}>
             <E.ChildImgWrapper
@@ -33,8 +33,8 @@ export default function HomePatronListUI(props: IPropsHomePatronListUI) {
                     <ColoredTag
                       key={index}
                       text={`#${el}`}
-                      fontSize={'9px'}
-                      padding={'2px 4px 2px 4px'}
+                      fontSize='8px'
+                      padding='4px 8px'
                     />
                   ))}
                 </E.ChildrenTags>
@@ -45,14 +45,14 @@ export default function HomePatronListUI(props: IPropsHomePatronListUI) {
                   .includes(el._id) ? (
                   <Icon
                     name="bookmark-outline"
-                    size={20}
+                    size={22}
                     color={'rgba(0, 0, 0, 0.4)'}
                     onPress={props.onPressPick(el)}
                   />
                 ) : (
                   <Icon
                     name="bookmark"
-                    size={20}
+                    size={22}
                     color={'#448800'}
                     onPress={props.onPressPick(el)}
                   />
@@ -61,7 +61,7 @@ export default function HomePatronListUI(props: IPropsHomePatronListUI) {
             </E.ChildDetails>
           </E.ChildrenList>
         ))}
-      </ScrollView>
+      </E.Wrapper>
     </>
   );
 }

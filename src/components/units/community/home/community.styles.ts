@@ -14,7 +14,6 @@ export const CommunityHeader = styled.View`
   height: 231px;
   margin-bottom: 8px;
   padding: 20px 24px;
-
   background-color: #ffffff;
 `;
 

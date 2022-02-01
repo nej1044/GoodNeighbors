@@ -1,9 +1,14 @@
 import styled from '@emotion/native';
 
+export const Wrapper = styled.ScrollView`
+  padding: 0 20px;
+  background-color: white;
+`;
+
 export const ChildrenList = styled.View`
   flex-direction: row;
   width: 100%;
-  padding: 25px 0px 25px 20px;
+  padding: 30px 0;
   border-bottom-width: 1px;
   border-color: #f0f0f0;
   justify-content: space-between;
@@ -22,18 +27,21 @@ export const ChildDetails = styled.View`
 `;
 
 export const ChildAbout = styled.Pressable`
-  width: 80%;
+  width: 77%;
   justify-content: space-between;
 `;
 
 export const ChildName = styled.Text`
   color: #000;
-  font-weight: 700;
-  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
 `;
 
 export const ChildBio = styled.Text`
   color: #000;
+  font-size: 14px;
+  letter-spacing: -0.5px;
+  padding-right: 25px;
 `;
 
 export const ChildrenTags = styled.View`

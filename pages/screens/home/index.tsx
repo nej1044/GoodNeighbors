@@ -58,10 +58,18 @@ const HomeScreen = ({ navigation }) => {
         component={HomeCampaignList}
         options={() => ({
           headerTitle: '캠페인',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
           headerShadowVisible: true,
           headerTransparent: false,
           headerTintColor: 'black',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         })}
       />
       <Stack.Screen
@@ -69,10 +77,18 @@ const HomeScreen = ({ navigation }) => {
         component={HomeChildrenList}
         options={() => ({
           headerTitle: '결연 아동',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
           headerShadowVisible: true,
           headerTransparent: false,
           headerTintColor: 'black',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         })}
       />
       <Stack.Screen
@@ -80,10 +96,18 @@ const HomeScreen = ({ navigation }) => {
         component={HomePatronList}
         options={() => ({
           headerTitle: '정기 후원',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
           headerShadowVisible: true,
           headerTransparent: false,
           headerTintColor: 'black',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         })}
       />
       <Stack.Screen
