@@ -9,8 +9,9 @@ import HomePayment from '../../../src/components/units/home/homePayment/HomePaym
 import Payment from '../../../src/components/units/home/Payment/index';
 import PaymentResult from '../../../src/components/units/home/complete/index';
 import HomeSearch from '../../../src/components/units/home/search/HomeSearch.container';
-import { Image, Pressable } from 'react-native';
+import { Image, Pressable, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Menu, MenuOption, MenuOptions, MenuTrigger } from 'react-native-popup-menu';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
         component={HomeMain}
         options={() => ({
           headerTitle: '',
-          headerStyle: { height: 60 },
+          headerStyle: { height: 100 },
           headerShadowVisible: false,
           headerLeft: () => (
             <Pressable>
@@ -119,6 +120,48 @@ const HomeScreen = ({ navigation }) => {
           headerShadowVisible: true,
           headerTransparent: true,
           headerTintColor: 'white',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ color: '#ffffff', paddingLeft: 20, paddingBottom: 40 }}
+            />
+          ),
+          headerRight: () => (
+            <View style={{ flexDirection: 'row' }}>
+              <Icon
+                name="share-outline"
+                color="white"
+                size={24}
+                style={{ paddingTop: 15, paddingRight: 10  }}
+                onPress={() => share()}
+              />
+              <Menu>
+                <MenuTrigger>
+                  <Icon
+                    name="bookmark-outline"
+                    color="white"
+                    size={24}
+                    style={{ paddingRight: 20, paddingTop: 15 }}
+                  />
+                </MenuTrigger>
+                <MenuOptions optionsContainerStyle={{ width: 100 }}>
+                  <MenuOption
+                    onSelect={() => {
+                      navigation.navigate('write', {
+                        isEdit: true,
+                        // boardId: route.params.params.boardId,
+                      });
+                    }}
+                    text="수정"
+                    style={{ padding: 10 }}
+                  />
+                  <MenuOption text="삭제" style={{ padding: 10 }} />
+                </MenuOptions>
+              </Menu>
+            </View>
+          ),
         })}
       />
       <Stack.Screen

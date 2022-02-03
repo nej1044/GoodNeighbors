@@ -33,17 +33,31 @@ export default function HomeDetails({ route, navigation }: IPropNavigation) {
   const suppoterRef = HomeCollection.doc(route.params?.useditemId);
 
   useEffect(() => {
-    docRef.get().then((doc) => setHomeData({ ...doc.data()?.EndAt }));
-    docRef.get().then((doc) => setPlanTitle(doc.data()?.plansTitle));
-    docRef.get().then((doc) => setPeople(doc.data()?.suppoters));
-  }, [docRef]);
+    let isComponentMounted = true;
+    const fetchData = async () => {
+      await docRef.get().then((doc) => setHomeData({ ...doc.data()?.EndAt }));
+      await docRef.get().then((doc) => setPlanTitle(doc.data()?.plansTitle));
+      await docRef.get().then((doc) => setPeople(doc.data()?.suppoters));
+    };
+    fetchData();
+    return () => {
+      isComponentMounted = false;
+    };
+  }, []);
 
   const getDate = new Date(homeData._seconds * 1000);
 
   useEffect(() => {
-    HomeCollection.doc(route.params?.useditemId)
-      .get()
-      .then((doc) => setFiredata({ ...doc.data() }));
+    let isComponentMounted = true;
+    const fetchData = async () => {
+      HomeCollection.doc(route.params?.useditemId)
+        .get()
+        .then((doc) => setFiredata({ ...doc.data() }));
+    };
+    fetchData();
+    return () => {
+      isComponentMounted = false;
+    };
   }, []);
 
   const onPressSupport = () => {

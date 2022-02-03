@@ -1,20 +1,17 @@
 import styled from '@emotion/native';
 
-export const Wrapper = styled.View`
+export const Wrapper = styled.ScrollView`
   width: 100%;
   height: 100%;
 `;
 
 export const Top = styled.View`
-  flex: 1.5;
-  /* width: 100%;
-  height: 100%; */
+  height: 280px;
 `;
 
 export const TopImgWrapper = styled.View``;
 
 export const Img = styled.Image`
-  /* object-fit: cover; */
   width: 100%;
   height: 100%;
   position: relative;
@@ -22,16 +19,15 @@ export const Img = styled.Image`
 
 export const TopOverWrapper = styled.View`
   position: absolute;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   height: 100%;
-  padding: 20px 20px 20px 20px;
+  padding: 30px 20px;
 `;
 
 export const IconBtns = styled.View`
   flex-direction: row-reverse;
   align-items: center;
-  /* background-color: lightgreen; */
 `;
 
 export const Info = styled.View`
@@ -41,11 +37,12 @@ export const Info = styled.View`
 `;
 
 export const InfoDetails = styled.View`
-  /* background-color: green; */
   width: 70%;
+  padding-right: 10px;
 `;
 
 export const InfoDetailTitle = styled.Text`
+  margin-bottom: 6px;
   color: white;
   font-weight: 700;
   font-size: 22px;
@@ -53,13 +50,18 @@ export const InfoDetailTitle = styled.Text`
 
 export const DetailRemark = styled.Text`
   color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
-export const InfoPeriod = styled.View``;
+export const InfoPeriod = styled.View`
+`;
 
 export const PeriodTxt = styled.Text`
   color: rgba(255, 255, 255, 0.7);
   font-size: 10px;
+  letter-spacing: -0.5px;
 `;
 
 export const TempInfo = styled.View`
@@ -77,13 +79,11 @@ export const TempTitle = styled.Text`
 `;
 
 export const Bottom = styled.View`
-  flex: 2;
   width: 100%;
-  height: 100%;
 `;
 
 export const BottomSummaryWrapper = styled.View`
-  padding: 30px 20px 30px 20px;
+  padding: 30px 20px;
   background-color: white;
 `;
 
@@ -96,26 +96,29 @@ export const SummaryRemarks = styled.Text`
 `;
 
 export const SummaryContent = styled.Text`
+  margin-bottom: 15px;
   color: #000;
-  padding-bottom: 10px;
+  font-size: 14px;
+  letter-spacing: -0.5px;
 `;
 
 export const Tags = styled.View`
   flex-direction: row;
 `;
 
-export const Progress = styled.View``;
+export const Progress = styled.View`
+  margin-top: 30px;
+`;
 
 export const BottomDetailsWrapper = styled.View`
-  flex: 1;
-  margin-top: 20px;
-  padding: 30px 20px 30px 20px;
+  margin-top: 10px;
+  padding: 30px 20px;
   background-color: white;
 `;
 
 export const DetailTitle = styled.Text`
   color: #000;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   padding-bottom: 20px;
 `;
@@ -126,9 +129,7 @@ export const DetailContent = styled.Text`
 
 export const BottomSupporters = styled.View`
   width: 100%;
-  /* background-color: mediumpurple; */
-  flex: 0.5;
-  margin: 20px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
   padding: 15px;
   flex-direction: row;
   justify-content: space-between;
@@ -145,13 +146,11 @@ export const SupportersNums = styled.Text`
   color: #000;
 `;
 export const BottomRecommendWrapper = styled.View`
-  flex: 1;
+  width: 100%;
 `;
 
 export const RecommendWrapper = styled.View`
-  flex: 1;
   background-color: #fff;
-  /* margin-top: 20px; */
   padding: 30px 20px 30px 20px;
 `;
 
@@ -172,11 +171,9 @@ export const RecommendList = styled.View`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* background-color: yellow; */
 `;
 
 export const RecommendCard = styled.View`
-  /* background-color: yellowgreen; */
 `;
 
 export const RImageWrpper = styled.Pressable`

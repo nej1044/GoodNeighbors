@@ -1,19 +1,20 @@
 import styled from '@emotion/native';
 
 export const RecommendWrapper = styled.View`
-  flex: 1;
   background-color: #fff;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 30px 20px 30px 20px;
 `;
 
 export const RecommendTitle = styled.View`
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 `;
 
 export const RecommendTitleText = styled.Text`
   color: #000;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
 export const UserName = styled.Text`
@@ -43,6 +44,8 @@ export const RecommendCardDetails = styled.View`
 export const RecommendCardTitle = styled.Text`
   color: #000;
   font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.5px;
 `;
 
 export const RecommendBookmark = styled.View``;

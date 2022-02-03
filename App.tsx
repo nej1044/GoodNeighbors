@@ -92,7 +92,7 @@ const App = () => {
     <GlobalContext.Provider value={value}>
       <ApolloProvider client={client}>
         <MenuProvider>
-          <SafeAreaView />
+          {/* <SafeAreaView /> */}
           <Navigation />
         </MenuProvider>
       </ApolloProvider>

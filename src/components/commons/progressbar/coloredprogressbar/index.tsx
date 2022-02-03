@@ -21,6 +21,7 @@ const ProgressInfo = styled.View`
 
 const DDay = styled.Text`
   font-weight: 500;
+  font-size: 16px;
   color: #448800;
 `;
 
@@ -49,11 +50,13 @@ const BottomCount = styled.View`
 `;
 
 const CurrentSupporters = styled.Text`
-  font-size: 11px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 10px;
 `;
 
 const Goals = styled.Text`
-  font-size: 11px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 10px;
 `;
 
 export default function ProgressBar(props: IPropsColoredProgressBar) {
@@ -62,8 +65,15 @@ export default function ProgressBar(props: IPropsColoredProgressBar) {
   const docRef = HomeCollection.doc(props.id);
 
   React.useEffect(() => {
-    docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
-  }, [docRef]);
+    let isComponentMounted = true;
+    const fetchData = async () => {
+      await docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
+    };
+    fetchData();
+    return () => {
+      isComponentMounted = false;
+    };
+  }, []);
 
   const current = props.current;
   const per = Math.floor((current / goalCount) * 100);

@@ -58,10 +58,17 @@ export default function ClearProgressBar(props: IPropsClearProgressBar) {
   const docRef = HomeCollection.doc(props.id);
 
   React.useEffect(() => {
-    docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
-    docRef.get().then((doc) => setGetEnd({ ...doc.data()?.EndAt }));
-    docRef.get().then((doc) => setPeople(doc.data()?.suppoters));
-  }, [docRef]);
+    let isComponentMounted = true;
+    const fetchData = async () => {
+      await docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
+      await docRef.get().then((doc) => setGetEnd({ ...doc.data()?.EndAt }));
+      await docRef.get().then((doc) => setPeople(doc.data()?.suppoters));
+    };
+    fetchData();
+    return () => {
+      isComponentMounted = false;
+    };
+  }, []);
 
   const current = people;
 

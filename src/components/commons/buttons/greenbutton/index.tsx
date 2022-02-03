@@ -25,6 +25,7 @@ const SubmitText = styled.Text`
   color: #ffffff;
   font-size: ${(props: IGreenButton) => props.fontSize};
   font-weight: ${(props: IGreenButton) => props.fontWeight};
+  letter-spacing: -0.5px;
 `;
 
 const GreenButton = (props: IGreenButton) => {
