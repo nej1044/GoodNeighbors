@@ -31,6 +31,16 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
   return (
     <>
       <StatusBar barStyle="light-content" />
+      <E.SupportWrap>
+        <GreenButton
+          text={'나도 참여하기'}
+          width="100%"
+          height={'52px'}
+          onPressBtn={props.onPressSupport}
+          fontSize="16px"
+          fontWeight={500}
+        />
+      </E.SupportWrap>
       <E.Wrapper>
         <E.Top>
           <E.TopImgWrapper>
@@ -166,13 +176,7 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
             <HomeListBottom category={category} navigation={props.navigation} />
           </E.BottomRecommendWrapper>
         </E.Bottom>
-        <GreenButton
-          text={'나도 참여하기'}
-          height={'52px'}
-          onPressBtn={props.onPressSupport}
-          fontSize="16px"
-          fontWeight={500}
-        />
+        <View style={{ height: 52 }}></View>
       </E.Wrapper>
     </>
   );

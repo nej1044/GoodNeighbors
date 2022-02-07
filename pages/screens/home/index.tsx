@@ -134,7 +134,7 @@ const HomeScreen = ({ navigation }) => {
                 name="share-outline"
                 color="white"
                 size={24}
-                style={{ paddingTop: 15, paddingRight: 10  }}
+                style={{ paddingTop: 15, paddingRight: 10 }}
                 onPress={() => share()}
               />
               <Menu>
@@ -169,10 +169,19 @@ const HomeScreen = ({ navigation }) => {
         component={HomePayment}
         options={() => ({
           headerTitle: '결제하기',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
           headerShadowVisible: true,
           headerTransparent: false,
           headerTintColor: 'black',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              color="rgba(137,137,137, 0.9)"
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         })}
       />
       <Stack.Screen

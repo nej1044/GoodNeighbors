@@ -130,6 +130,7 @@ export const ChildName = styled.Text`
 `;
 
 export const ChildBio = styled.Text`
+  padding-right: 10px;
   color: #000;
   font-size: 14px;
   letter-spacing: -0.5px;

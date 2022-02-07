@@ -33,6 +33,20 @@ export default function HomeDetails({ route, navigation }: IPropNavigation) {
   const suppoterRef = HomeCollection.doc(route.params?.useditemId);
 
   useEffect(() => {
+    navigation.getParent()?.setOptions({ tabBarStyle: { display: 'none' } });
+    return () =>
+      navigation.getParent()?.setOptions({
+        tabBarStyle: {
+          height: 80,
+          paddingTop: 10,
+          paddingBottom: 26,
+          paddingLeft: 30,
+          paddingRight: 30,
+        },
+      });
+  }, [navigation]);
+
+  useEffect(() => {
     let isComponentMounted = true;
     const fetchData = async () => {
       await docRef.get().then((doc) => setHomeData({ ...doc.data()?.EndAt }));

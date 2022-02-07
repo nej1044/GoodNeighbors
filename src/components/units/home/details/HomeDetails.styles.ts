@@ -3,6 +3,7 @@ import styled from '@emotion/native';
 export const Wrapper = styled.ScrollView`
   width: 100%;
   height: 100%;
+  position: relative;
 `;
 
 export const Top = styled.View`
@@ -55,8 +56,7 @@ export const DetailRemark = styled.Text`
   letter-spacing: -0.5px;
 `;
 
-export const InfoPeriod = styled.View`
-`;
+export const InfoPeriod = styled.View``;
 
 export const PeriodTxt = styled.Text`
   color: rgba(255, 255, 255, 0.7);
@@ -173,8 +173,7 @@ export const RecommendList = styled.View`
   justify-content: space-evenly;
 `;
 
-export const RecommendCard = styled.View`
-`;
+export const RecommendCard = styled.View``;
 
 export const RImageWrpper = styled.Pressable`
   width: 160px;
@@ -200,4 +199,14 @@ export const CardTag = styled.View`
   width: 100%;
   height: 100%;
   padding: 10px;
+`;
+
+export const SupportWrap = styled.Pressable`
+  z-index: 1;
+  position: absolute;
+  top: 745px;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  background-color: #ffffff;
 `;
