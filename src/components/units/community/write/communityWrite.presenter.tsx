@@ -25,7 +25,7 @@ const CommunityWriteUI = (props: IPropsCommunityWriteUI) => {
         <S.HashWrap>
           <R.View style={{ flexDirection: 'row' }}>
             {props.hashArr?.map((el: string, idx: number) => (
-              <WhiteTag key={idx} text={el} padding="4px 8px" onPress={props.deleteHash(idx)} />
+              <WhiteTag key={idx} text={el} padding="8px 12px" fontSize='10px' color="#717171" onPress={props.deleteHash(idx)} />
             ))}
           </R.View>
           <S.TagInput
@@ -41,14 +41,14 @@ const CommunityWriteUI = (props: IPropsCommunityWriteUI) => {
             </S.PhotoUpload>
           ))}
           <S.PhotoUpload onPress={props.addImage}>
-            <Icon name="add" size={20} color="white" />
+            <Icon name="add" size={30} color="white" />
           </S.PhotoUpload>
         </S.photoWrap>
       </S.Wrap>
       {!props.isEdit ? (
         <GreenButton
           text="등록하기"
-          height="10%"
+          height="52px"
           fontSize="16px"
           fontWeight={500}
           onPressBtn={props.onPressSubmit}
@@ -56,7 +56,7 @@ const CommunityWriteUI = (props: IPropsCommunityWriteUI) => {
       ) : (
         <GreenButton
           text="수정하기"
-          height="10%"
+          height="52px"
           fontSize="16px"
           fontWeight={500}
           onPressBtn={props.onPressUpdate}

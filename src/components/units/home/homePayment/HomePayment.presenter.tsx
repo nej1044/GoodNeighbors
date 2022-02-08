@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as E from './HomePayment.styles';
-import { Image, Pressable, Text, View } from 'react-native';
+import { Alert, Image, Modal, Pressable, Text, View } from 'react-native';
 import GreenButton from '../../../commons/buttons/greenbutton';
 import { IPropsHomePaymentUI } from './HomePayment.types';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -12,6 +12,8 @@ export default function HomePaymentUI(props: IPropsHomePaymentUI) {
   IonIcon.loadFont();
 
   const [checked, setChecked] = React.useState('first');
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const [anotherPay, setAnotherPay] = React.useState('네이버페이');
 
   return (
     <>
@@ -74,8 +76,8 @@ export default function HomePaymentUI(props: IPropsHomePaymentUI) {
                 </E.RadioButton>
                 <E.RadioText>다른 결제수단</E.RadioText>
               </Pressable>
-              <E.AnotherPay>
-                <Text>네이버페이</Text>
+              <E.AnotherPay onPress={() => setModalVisible(true)}>
+                <Text>{anotherPay}</Text>
                 <Text style={{ color: '#448800' }}>변경</Text>
               </E.AnotherPay>
             </E.OwnPayView>
@@ -109,8 +111,52 @@ export default function HomePaymentUI(props: IPropsHomePaymentUI) {
           fontWeight={500}
           onPressBtn={props.onPressPay}
         />
-        <View style={{ height: 15, backgroundColor: "ffffff"}}></View>
+        <View style={{ height: 15, backgroundColor: 'ffffff' }}></View>
       </E.Wrapper>
+      <Modal
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <E.ModalWrap>
+          <E.ContentWrap>
+            <Pressable onPress={() => setModalVisible(!modalVisible)}>
+              <Icon name="close" size={25} color="rgba(0,0,0,0.4)" />
+            </Pressable>
+            <E.SelectPay
+              onPress={() => {
+                setModalVisible(!modalVisible);
+                setAnotherPay('네이버페이');
+              }}
+            >
+              <Text>네이버페이</Text>
+            </E.SelectPay>
+            <E.SelectPay
+              onPress={() => {
+                setModalVisible(!modalVisible);
+                setAnotherPay('카카오페이');
+              }}
+            >
+              <Text>카카오페이</Text>
+            </E.SelectPay>
+            <E.SelectPay onPress={() => {
+                setModalVisible(!modalVisible);
+                setAnotherPay('신용카드');
+              }}>
+              <Text>신용카드</Text>
+            </E.SelectPay>
+            <E.SelectPay onPress={() => {
+                setModalVisible(!modalVisible);
+                setAnotherPay('가상계좌');
+              }}>
+              <Text>가상계좌</Text>
+            </E.SelectPay>
+          </E.ContentWrap>
+        </E.ModalWrap>
+      </Modal>
     </>
   );
 }

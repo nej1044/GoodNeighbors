@@ -13,18 +13,16 @@ export const TitleInput = styled.TextInput`
 `;
 
 export const ContentsInput = styled.TextInput`
-  flex: 6;
+  flex: 5;
   border-bottom-width: 1px;
   border-bottom-color: #f0f0f0;
   padding: 20px 0;
 `;
 
 export const HashWrap = styled.View`
-  flex-wrap: wrap;
-  flex: 2;
+  flex: 1;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
   border-bottom-width: 1px;
   border-bottom-color: #f0f0f0;
 `;
@@ -33,8 +31,8 @@ export const TagInput = styled.TextInput``;
 
 export const photoWrap = styled.View`
   flex-direction: row;
-  align-items: center;
-  flex: 3;
+  flex: 2;
+  padding: 24px 0;
 `;
 
 export const PhotoUpload = styled.Pressable`

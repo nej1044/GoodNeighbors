@@ -45,7 +45,7 @@ function PaymentResult({ route, navigation }: IPropNavigation) {
   `;
 
   const TextWrapper = styled.View`
-    padding-top: 10px;
+    padding-top: 20px;
     flex-direction: row;
   `;
   const KeywordColor = styled.Text`

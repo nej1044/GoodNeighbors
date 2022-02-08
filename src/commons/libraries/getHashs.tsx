@@ -21,8 +21,14 @@ const GetHashs = ({ id }: { id: string }) => {
   const docRef = commuCollection.doc(id);
 
   useEffect(() => {
-    docRef.get().then((doc) => setHashs([...doc.data().tags]));
-    return () => console.log('useEffect!');
+    let isComponentMounted = true;
+    const fetchData = async () => {
+      if (isComponentMounted) await docRef.get().then((doc) => setHashs([...doc.data().tags]));
+    };
+    fetchData();
+    return () => {
+      isComponentMounted = false;
+    };
   }, []);
 
   return hashs.map((el: string, idx: number) => <Tag key={idx}>#{el}</Tag>);

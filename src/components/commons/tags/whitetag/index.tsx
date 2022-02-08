@@ -6,11 +6,11 @@ interface IPropsWhiteTag {
   fontSize?: string;
   onPress?: () => void;
   padding?: string;
+  margin?: string;
 }
 
 const Tag = styled.View`
   margin-right: 8px;
-  margin-bottom: 10px;
   padding: ${(props: IPropsWhiteTag) => props.padding};
   border: 1px solid #9f9f9f;
   border-radius: 20px;
@@ -18,14 +18,16 @@ const Tag = styled.View`
 `;
 
 const TagText = styled.Text`
-  color: #000000;
+  color: ${(props: IPropsWhiteTag) => props.color};
   font-size: ${(props: IPropsWhiteTag) => props.fontSize};
 `;
 
 const WhiteTag = (props: IPropsWhiteTag) => {
   return (
-    <Tag onPress={props.onPress} padding={props.padding}>
-      <TagText fontSize={props.fontSize}># {props.text}</TagText>
+    <Tag onPress={props.onPress} padding={props.padding} margin={props.margin}>
+      <TagText fontSize={props.fontSize} color={props.color}>
+        # {props.text}
+      </TagText>
     </Tag>
   );
 };

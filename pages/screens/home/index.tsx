@@ -199,11 +199,19 @@ const HomeScreen = ({ navigation }) => {
         name="PaymentResult"
         component={PaymentResult}
         options={() => ({
-          headerTitle: '결제하기',
+          headerTitle: '',
           headerTitleStyle: { fontSize: 22, fontWeight: '700' },
           headerShadowVisible: true,
           headerTransparent: false,
           headerTintColor: 'black',
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         })}
       />
     </Stack.Navigator>

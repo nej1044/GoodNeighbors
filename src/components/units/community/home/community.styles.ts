@@ -13,17 +13,19 @@ export const CommunityHeader = styled.View`
   width: 100%;
   height: 231px;
   margin-bottom: 8px;
-  padding: 20px 24px;
+  padding: 24px;
   background-color: #ffffff;
 `;
 
 export const SubTitle = styled.Text`
   color: black;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
 export const CardContainer = styled.ScrollView`
-  margin-top: 10px;
+  margin-top: 12px;
 `;
 
 export const Card = styled.Pressable`
@@ -45,6 +47,7 @@ export const CardBackground = styled.ImageBackground`
 export const CardTitle = styled.Text`
   color: #ffffff;
   font-size: 10px;
+  font-weight: 500;
   padding-top: 4px;
   padding-bottom: 8px;
   border-bottom-color: #ffffff;
@@ -65,28 +68,29 @@ export const HashSection = styled.View`
 export const HashTitle = styled.Text`
   color: #000000;
   font-size: 16px;
-  margin-bottom: 6px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
 export const HashSubtitle = styled.Text`
-  color: #000000;
+  color: rgba(0, 0, 0, 0.7);
   font-size: 10px;
   font-weight: 400;
+  letter-spacing: -0.5px;
 `;
 
 export const TBD = styled.View`
   width: 36px;
   height: 36px;
+  justify-content: center;
+  align-items: center;
   border-radius: 18px;
   background-color: #f8f9fb;
 `;
 
-export const TBDText = styled.Text`
-  line-height: 36px;
-  text-align: center;
-  color: #ff0000;
-  font-size: 10px;
-  font-weight: 400;
+export const TBDIcon = styled.Image`
+  width: 21px;
+  height: 21px;
 `;
 
 export const BoardContainer = styled.ScrollView`
@@ -134,14 +138,14 @@ export const BoardTitle = styled.Text`
   height: 30%;
   color: #000000;
   font-size: 16px;
-  font-weight: 400;
+  letter-spacing: -0.5px;
 `;
 
 export const BoardContent = styled.Text`
   height: 50%;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
-  font-weight: 400;
+  letter-spacing: -0.5px;
 `;
 
 export const TagContainer = styled.View`
@@ -158,9 +162,8 @@ export const UserWrap = styled.View`
   width: 100%;
 `;
 export const UserText = styled.Text`
-  color: #000000;
+  color: rgba(0, 0, 0, 0.4);
   font-size: 10px;
-  font-weight: 400;
 `;
 export const BoardFooter = styled.View`
   display: flex;
@@ -205,6 +208,11 @@ export const WriteIcon = styled.Pressable`
   background-color: #448800;
   border-radius: 30px;
 `;
+
+export const WriteImg = styled.Image`
+  width: 24px;
+  height: 24px;
+`
 
 export const ModalWrap = styled.View`
   display: flex;

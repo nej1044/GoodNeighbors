@@ -1,7 +1,6 @@
 import styled from '@emotion/native';
 
-export const Wrapper = styled.ScrollView`
-`;
+export const Wrapper = styled.ScrollView``;
 
 export const ChildrenList = styled.View`
   flex-direction: row;
@@ -86,7 +85,7 @@ export const TotalPrice = styled.Text`
 export const Agree = styled.Text`
   padding: 16px;
   text-align: center;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 12px;
   letter-spacing: -0.5px;
 `;
@@ -208,3 +207,24 @@ export const MessageInput = styled.TextInput`
   height: 100px;
   padding: 20px 0;
 `;
+
+export const ModalWrap = styled.View`
+  height: 100%;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
+
+export const ContentWrap = styled.View`
+  align-items: flex-end;
+  height: 315px;
+  padding: 26px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #ffffff;
+`;
+
+export const SelectPay = styled.Pressable`
+  width: 100%;
+  padding: 16px 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #f0f0f0;
+`

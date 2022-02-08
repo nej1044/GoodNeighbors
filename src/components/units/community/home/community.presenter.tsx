@@ -14,6 +14,7 @@ import GetDday from '../../../../commons/libraries/getDday';
 // import LinearGradient from 'react-native-linear-gradient';
 
 const CommunityUI = (props: IPropsCommunityUI) => {
+  Icon.loadFont();
   const [modalVisible, setModalVisible] = useState(false);
   const hashArr = [
     '정기후원',
@@ -56,8 +57,19 @@ const CommunityUI = (props: IPropsCommunityUI) => {
                         start={{ x: 0, y: 1 }}
                         end={{ x: 0, y: 0 }}
                       ></LinearGradient> */}
-                      <ColoredTag text={el.name.split('/')[0]} padding="4px 8px" fontSize="10px" />
-                      <S.CardTitle>{el.name.split('/')[1]}</S.CardTitle>
+                      <R.View
+                        style={{
+                          borderBottomWidth: 0.5,
+                          borderBottomColor: 'rgba(255,255,255,0.4)',
+                        }}
+                      >
+                        <ColoredTag
+                          text={el.name.split('/')[0]}
+                          padding="4px 8px"
+                          fontSize="10px"
+                        />
+                        <S.CardTitle>{el.name.split('/')[1]}</S.CardTitle>
+                      </R.View>
                       <GetDday id={el._id} />
                     </S.CardBackground>
                   </S.Card>
@@ -66,13 +78,16 @@ const CommunityUI = (props: IPropsCommunityUI) => {
             </S.CommunityHeader>
             <S.HashSection>
               <R.Pressable onPress={() => setModalVisible(true)}>
-                <R.View>
+                <R.View style={{ flexDirection: 'row' }}>
                   <S.HashTitle>관심 있는 해시태그를 설정해보세요!</S.HashTitle>
+                  <Icon size={20} color="rgba(0,0,0,0.4)" name="chevron-forward-outline" />
                 </R.View>
                 <S.HashSubtitle>그에 맞는 주제의 후원을 찾아드릴게요.</S.HashSubtitle>
               </R.Pressable>
               <S.TBD>
-                <S.TBDText>TBD</S.TBDText>
+                <S.TBDIcon
+                  source={require('../../../../../public/images/community/hashIcon.png')}
+                />
               </S.TBD>
             </S.HashSection>
             <S.BoardContainer>
@@ -97,17 +112,17 @@ const CommunityUI = (props: IPropsCommunityUI) => {
                   <S.BoardFooter>
                     <S.FooterLeft>
                       <S.LeftInnerWrap>
-                        <Icon name="heart-outline" size={24} />
+                        <Icon name="heart-outline" color="rgba(0,0,0,0.4)" size={24} />
                         <S.FooterText>{el.likeCount}</S.FooterText>
                       </S.LeftInnerWrap>
                       <S.LeftInnerWrap>
-                        <Icon name="chatbubble-outline" size={20} />
+                        <Icon name="chatbubble-outline" color="rgba(0,0,0,0.4)" size={20} />
                         <S.FooterText>
                           <CommentsCount boardId={el._id} />
                         </S.FooterText>
                       </S.LeftInnerWrap>
                     </S.FooterLeft>
-                    <Icon name="bookmark-outline" size={20} color="white" />
+                    <Icon name="bookmark-outline" color="rgba(0,0,0,0.4)" size={20} />
                   </S.BoardFooter>
                 </S.Board>
               ))}
@@ -167,7 +182,7 @@ const CommunityUI = (props: IPropsCommunityUI) => {
           </R.Modal>
         </R.ScrollView>
         <S.WriteIcon onPress={() => props.navigation.navigate('community', { screen: 'write' })}>
-          <Icon name="pencil" size={20} color="#ffffff" />
+          <S.WriteImg source={require('../../../../../public/images/community/writeIcon.png')} />
         </S.WriteIcon>
       </R.View>
     </>

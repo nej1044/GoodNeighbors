@@ -67,7 +67,7 @@ export default function ProgressBar(props: IPropsColoredProgressBar) {
   React.useEffect(() => {
     let isComponentMounted = true;
     const fetchData = async () => {
-      await docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
+      if (isComponentMounted) await docRef.get().then((doc) => setGoalCount(doc.data()?.goal));
     };
     fetchData();
     return () => {

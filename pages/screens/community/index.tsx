@@ -48,13 +48,13 @@ const CommunityScreen = ({ navigation, route }) => {
         component={Community}
         options={() => ({
           headerTitle: '커뮤니티',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 300 },
           headerRight: () => (
             <Pressable
               style={{ flexDirection: 'row' }}
               onPress={() => navigation.navigate('search')}
             >
-              <Icon name="search" color="black" size={20} style={{ padding: 15 }} />
+              <Icon name="search" color="rgba(0,0,0,0.4)" size={25} style={{ paddingRight: 50 }} />
             </Pressable>
           ),
         })}
@@ -64,7 +64,15 @@ const CommunityScreen = ({ navigation, route }) => {
         component={CommunityWrite}
         options={{
           title: '커뮤니티 글쓰기',
-          headerTitleStyle: { fontSize: 22, fontWeight: '700' },
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
         }}
       />
       <Stack.Screen
@@ -130,12 +138,35 @@ const CommunityScreen = ({ navigation, route }) => {
         component={CommunitySearch}
         options={() => ({
           headerTitle: '',
+          headerStyle: {
+            height: 100,
+          },
           headerRight: () => (
-            <SearchInput
-              height={'100px'}
-              onPress={() => navigation.navigate('search', { search: search })}
-              onChange={onChangeSearch}
-              placeholder={'검색어를 입력해주세요'}
+            <View
+              style={{
+                borderColor: 'rgba(26,26,26,0.2)',
+                borderWidth: 1,
+                borderRadius: 8,
+                height: 45,
+                marginRight: 22,
+                paddingRight: 9,
+              }}
+            >
+              <SearchInput
+                width="268px"
+                height="100%"
+                onPress={() => navigation.navigate('search', { search: search })}
+                onChange={onChangeSearch}
+                placeholder={'검색어를 입력해주세요'}
+              />
+            </View>
+          ),
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
             />
           ),
         })}
