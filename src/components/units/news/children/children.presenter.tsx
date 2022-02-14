@@ -9,7 +9,6 @@ import { IPropsNewsChildrenUI } from './children.types';
 const NewsChildrenUI = (props: IPropsNewsChildrenUI) => {
   return (
     <S.WholeWrapper>
-      <ScrollView>
         <S.First_Wrapper>
           <S.ContentWrapper>
             <S.HeaderWrapper>
@@ -256,7 +255,6 @@ const NewsChildrenUI = (props: IPropsNewsChildrenUI) => {
             </S.ButtonWrapper>
           )}
         </S.Third_Wrapper>
-      </ScrollView>
     </S.WholeWrapper>
   );
 };

@@ -63,11 +63,7 @@ const CommunityUI = (props: IPropsCommunityUI) => {
                           borderBottomColor: 'rgba(255,255,255,0.4)',
                         }}
                       >
-                        <ColoredTag
-                          text={el.name.split('/')[0]}
-                          padding="4px 8px"
-                          fontSize="10px"
-                        />
+                        <ColoredTag text={el.name.split('/')[0]} fontSize="10px" />
                         <S.CardTitle>{el.name.split('/')[1]}</S.CardTitle>
                       </R.View>
                       <GetDday id={el._id} />
@@ -156,19 +152,9 @@ const CommunityUI = (props: IPropsCommunityUI) => {
                     <S.ModalTagWrap>
                       {hashArr.map((el, idx) =>
                         props.userHash.includes(el) ? (
-                          <GreenTag
-                            key={idx}
-                            text={el}
-                            padding="8px 12px"
-                            onPress={props.setHash(el)}
-                          />
+                          <GreenTag key={idx} text={el} onPress={props.setHash(el)} />
                         ) : (
-                          <WhiteTag
-                            key={idx}
-                            text={el}
-                            padding="8px 12px"
-                            onPress={props.setHash(el)}
-                          />
+                          <WhiteTag key={idx} text={el} onPress={props.setHash(el)} />
                         ),
                       )}
                     </S.ModalTagWrap>

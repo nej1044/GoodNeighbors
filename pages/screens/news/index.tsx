@@ -12,6 +12,7 @@ const NewsScreen = () => {
         component={NewsMain}
         options={() => ({
           headerTitle: '소식',
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 350 },
         })}
       />
     </Stack.Navigator>

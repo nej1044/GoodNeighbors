@@ -11,7 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3CCFD0AB279E36F200A364C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CCFD0AA279E36F200A364C5 /* GoogleService-Info.plist */; };
+		3C3D8CC927B50C7900D52A5B /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3D8CC527B50C1B00D52A5B /* OpenSSL.xcframework */; };
+		3C3D8CCD27B5F41600D52A5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3D8CCC27B5F41600D52A5B /* GoogleService-Info.plist */; };
+		3C3D8CCE27B5F41600D52A5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3D8CCC27B5F41600D52A5B /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D226B58A3BBD8C971FFC1267 /* libPods-GoodNeighbors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C019AA9C76EFEB99BBB22D6C /* libPods-GoodNeighbors.a */; };
 		F950D42C704BBCF0BF64F8E4 /* libPods-GoodNeighbors-GoodNeighborsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8BFE3463F2D2E0AEA8C91A /* libPods-GoodNeighbors-GoodNeighborsTests.a */; };
@@ -38,7 +40,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GoodNeighbors/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GoodNeighbors/main.m; sourceTree = "<group>"; };
 		2697A7654425F507D8401BEE /* Pods-GoodNeighbors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodNeighbors.release.xcconfig"; path = "Target Support Files/Pods-GoodNeighbors/Pods-GoodNeighbors.release.xcconfig"; sourceTree = "<group>"; };
-		3CCFD0AA279E36F200A364C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C3D8CC527B50C1B00D52A5B /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
+		3C3D8CCC27B5F41600D52A5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5368704F5890161C935EE769 /* Pods-GoodNeighbors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodNeighbors.debug.xcconfig"; path = "Target Support Files/Pods-GoodNeighbors/Pods-GoodNeighbors.debug.xcconfig"; sourceTree = "<group>"; };
 		5A8BFE3463F2D2E0AEA8C91A /* libPods-GoodNeighbors-GoodNeighborsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoodNeighbors-GoodNeighborsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GoodNeighbors/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3D8CC927B50C7900D52A5B /* OpenSSL.xcframework in Frameworks */,
 				D226B58A3BBD8C971FFC1267 /* libPods-GoodNeighbors.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +96,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				3CCFD0AA279E36F200A364C5 /* GoogleService-Info.plist */,
+				3C3D8CCC27B5F41600D52A5B /* GoogleService-Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -113,6 +117,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C3D8CC527B50C1B00D52A5B /* OpenSSL.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				C019AA9C76EFEB99BBB22D6C /* libPods-GoodNeighbors.a */,
 				5A8BFE3463F2D2E0AEA8C91A /* libPods-GoodNeighbors-GoodNeighborsTests.a */,
@@ -239,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3D8CCE27B5F41600D52A5B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +254,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				3CCFD0AB279E36F200A364C5 /* GoogleService-Info.plist in Resources */,
+				3C3D8CCD27B5F41600D52A5B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,8 +508,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CS5RU72HRJ;
 				ENABLE_BITCODE = NO;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 x86_64";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				INFOPLIST_FILE = GoodNeighbors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +536,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "x86_64 arm64";
+				DEVELOPMENT_TEAM = CS5RU72HRJ;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				INFOPLIST_FILE = GoodNeighbors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

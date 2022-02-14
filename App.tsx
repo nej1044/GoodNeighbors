@@ -8,7 +8,6 @@ import { createUploadLink } from 'apollo-upload-client';
 import { firebase } from '@react-native-firebase/firestore';
 import { MenuProvider } from 'react-native-popup-menu';
 import Navigation from './pages/navigation';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
 
 interface IGlobalContext {

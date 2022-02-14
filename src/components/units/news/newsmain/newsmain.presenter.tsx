@@ -10,11 +10,11 @@ const NewsMainUI = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarLabelStyle: { fontSize: 12 },
-        tabBarItemStyle: { width: 140 },
+        tabBarLabelStyle: { fontSize: 14, bottom: 5 },
+        tabBarItemStyle: { height: 36 },
         tabBarActiveTintColor: '#448800',
         tabBarInactiveTintColor: 'rgba(0, 0, 0, 0.4)',
-        tabBarIndicatorStyle: { backgroundColor: '#448800' },
+        tabBarIndicatorStyle: { width: 90, marginLeft: 18, backgroundColor: '#448800' },
       }}
     >
       <Tab.Screen name="캠페인" component={NewsCampaign} />

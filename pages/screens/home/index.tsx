@@ -36,7 +36,7 @@ const HomeScreen = ({ navigation }) => {
           headerRight: () => (
             <Pressable
               style={{ flexDirection: 'row' }}
-              onPress={() => navigation.navigate('search')}
+              onPress={() => navigation.navigate('homeSearch')}
             >
               <Icon name="search" color="rgba(0,0,0,0.4)" size={25} style={{ padding: 20 }} />
             </Pressable>

@@ -8,7 +8,8 @@ interface IPropsColoredTag {
 }
 
 const Tag = styled.View`
-  padding: ${(props: IPropsColoredTag) => props.padding};
+  /* padding: ${(props: IPropsColoredTag) => props.padding}; */
+  padding: 4px 8px;
   margin-right: 5px;
   border-radius: 40px;
   background-color: #448800;

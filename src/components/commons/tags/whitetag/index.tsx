@@ -11,7 +11,7 @@ interface IPropsWhiteTag {
 
 const Tag = styled.View`
   margin-right: 8px;
-  padding: ${(props: IPropsWhiteTag) => props.padding};
+  padding: 8px 12px;
   border: 1px solid #9f9f9f;
   border-radius: 20px;
   align-self: flex-start;

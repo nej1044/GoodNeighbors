@@ -36,7 +36,6 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                           <ColoredTag
                             text={`#${el.tags[el.tags.length - 1]}`}
                             fontSize="8px"
-                            padding="4px 8px"
                           />
                         </E.CardTag>
                       </E.ImgWrapper>
@@ -110,7 +109,6 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                             key={index}
                             text={`#${el}`}
                             fontSize='8px'
-                            padding='4px 8px'
                           />
                         ))}
                       </E.ChildrenTags>

@@ -8,10 +8,10 @@ interface IPropsGreenTag {
   padding?: string;
 }
 
-const Tag = styled.Text`
+const Tag = styled.View`
   margin-right: 8px;
   margin-bottom: 10px;
-  padding: ${(props: IPropsGreenTag) => props.padding};
+  padding: 8px 12px;
   border: 1px solid #448800;
   border-radius: 20px;
   background-color: #c5d2b7;
@@ -29,7 +29,7 @@ const TagText = styled.Text`
 const GreenTag = (props: IPropsGreenTag) => {
   return (
     <Tag fontSize={props.fontSize} onPress={props.onPress} padding={props.padding}>
-      # <TagText fontSize={props.fontSize}>{props.text}</TagText>
+      <TagText fontSize={props.fontSize}># {props.text}</TagText>
     </Tag>
   );
 };

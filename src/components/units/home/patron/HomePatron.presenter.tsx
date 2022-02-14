@@ -46,12 +46,7 @@ export default function HomePatronUI(props: IPropsHomePatronUI) {
                           end={{ x: 0, y: 0 }}
                         ></LinearGradient> */}
                         <E.CardTag>
-                          <ColoredTag
-                            key={el._id}
-                            text={`#${el.tags[0]}`}
-                            fontSize='8px'
-                            padding='4px 8px'
-                          />
+                          <ColoredTag key={el._id} text={`#${el.tags[0]}`} fontSize="8px" />
                           <ClearProgressBar height={'4px'} id={el._id} createdAt={el.createdAt} />
                         </E.CardTag>
                       </E.ImgWrapper>
@@ -114,12 +109,7 @@ export default function HomePatronUI(props: IPropsHomePatronUI) {
                         }}
                       />
                       <E.CardTag>
-                        <ColoredTag
-                          key={el._id}
-                          text={`#${el.tags[0]}`}
-                          fontSize='8px'
-                          padding='4px 8px'
-                        />
+                        <ColoredTag key={el._id} text={`#${el.tags[0]}`} fontSize="8px" />
                         <ClearProgressBar height={'2px'} id={el._id} createdAt={el.createdAt} />
                       </E.CardTag>
                     </E.RImageWrpper>

@@ -18,9 +18,9 @@ const CommunityList = ({ navigation, route }: IPropsRoute) => {
     return () =>
       navigation.getParent()?.setOptions({
         tabBarStyle: {
-          height: 64,
+          height: 80,
           paddingTop: 10,
-          paddingBottom: 10,
+          paddingBottom: 26,
           paddingLeft: 30,
           paddingRight: 30,
         },
