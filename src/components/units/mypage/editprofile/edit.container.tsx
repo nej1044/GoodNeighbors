@@ -1,5 +1,5 @@
 import EditUI from './edit.presenter';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { IPropsEditUI } from './edit.types';
 import { useMutation, useQuery } from '@apollo/client';
 import { FETCH_USER_LOGGED_IN, RESET_USER_PASSWORD, UPDATE_USER } from './edit.queries';
@@ -14,9 +14,7 @@ import {
 const Edit = ({ navigation, uri, onPress }: IPropsEditUI) => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
-
   const [updateUser] = useMutation<Pick<Mutation, 'updateUser'>, MutationUpdateUserArgs>(
     UPDATE_USER,
   );
@@ -24,6 +22,20 @@ const Edit = ({ navigation, uri, onPress }: IPropsEditUI) => {
     Pick<Mutation, 'resetUserPassword'>,
     MutationResetUserPasswordArgs
   >(RESET_USER_PASSWORD);
+
+  useEffect(() => {
+    navigation.getParent()?.setOptions({ tabBarStyle: { display: 'none' } });
+    return () =>
+      navigation.getParent()?.setOptions({
+        tabBarStyle: {
+          height: 80,
+          paddingTop: 10,
+          paddingBottom: 26,
+          paddingLeft: 30,
+          paddingRight: 30,
+        },
+      });
+  }, [navigation]);
 
   const onImageLibraryPress = useCallback(() => {
     const result = launchImageLibrary({

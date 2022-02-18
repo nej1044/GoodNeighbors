@@ -1,146 +1,111 @@
 import styled from '@emotion/native';
 
-export const WholeWrapper = styled.View`
+export const WholeWrapper = styled.ScrollView`
   width: 100%;
   height: 100%;
-`;
-
-export const HeaderWrapper = styled.View`
-  flex: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 0px 0px 10px;
-`;
-
-export const IconWrapper = styled.View`
-  display: flex;
-  flex-direction: row;
-  margin-right: 10px;
-`;
-
-export const Header = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
+  background-color: white;
 `;
 
 export const ProfileWrapper = styled.View`
-  flex: 15;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  height: 172px;
+  justify-content: space-between;
   align-items: center;
+  padding: 32px 0px 10px 0px;
 `;
 
-export const EditIcon = styled.View`
-  width: 40px;
-  height: 40px;
-  background-color: #898989;
-  border-radius: 50px;
+export const ProfileEditWrap = styled.View`
+  position: relative;
+`;
+
+export const ProfileImg = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 88px;
+  height: 88px;
+  padding: 20px;
+  border-radius: 44px;
+  background-color: #f0f0f0;
+`;
+
+export const ProfileIcon = styled.Image`
+  width: 85%;
+  height: 85%;
+`;
+
+export const EditImg = styled.Pressable`
   position: absolute;
-  top: 65px;
-  left: 210px;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 5px;
+  border: 1px solid #ffffff;
+  border-radius: 14px;
+  background-color: #f0f0f0;
+`;
+
+export const EditIcon = styled.Image`
+  width: 85%;
+  height: 85%;
 `;
 
 export const Name = styled.Text`
   font-size: 22px;
   font-weight: bold;
+  letter-spacing: -0.5px;
 `;
 
 export const TabWrapper = styled.View`
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px 90px 5px 50px;
+  width: 100%;
+  height: 642px;
 `;
 
-export const ActivityWrapper = styled.View`
-  flex: 7;
-  padding: 10px 20px;
+export const TabInnerWrapper = styled.View`
+  width: 100%;
+  padding: 20px 24px;
+  background-color: white;
 `;
 
-export const ActivityTitle = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 5px;
+export const ContentWrap = styled.View`
+  margin-bottom: 40px;
+`
+
+export const PITitle = styled.View`
+  width: 100%;
+  padding-bottom: 6px;
+  border-bottom-width: 3px;
+`;
+export const PITitleText = styled.Text`
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
 `;
 
-export const ActivityCommunity = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 7px;
-  padding-bottom: 7px;
+export const Content = styled.View`
+  width: 100%;
+  padding: 12px 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #f0f0f0;
 `;
 
-export const ActivityCategories = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 7px;
-  padding-bottom: 7px;
-`;
+export const Footer = styled.View`
+  width: 100%;
+  height: 100px;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  border-top-width: 3px;
+`
 
-export const ActivityPatron = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 5px;
-  padding-bottom: 7px;
-`;
-
-export const AboutWrapper = styled.View`
-  flex: 6;
-  padding: 0px 20px;
-  margin-bottom: 10px;
-`;
-
-export const AboutTitle = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  padding-bottom: 5px;
-`;
-
-export const AboutCompany = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 7px;
-  padding-bottom: 7px;
-`;
-
-export const AboutNotice = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 7px;
-  padding-bottom: 7px;
-`;
-
-export const InfoWrapper = styled.View`
-  flex: 4;
-  padding: 10px 20px 15px;
-`;
-
-export const InfoPhoneNumber = styled.Text`
+export const FooterText = styled.Text`
   font-size: 22px;
-  font-weight: bold;
-  padding: 5px 0px;
-`;
-
-export const InfoSite = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-bottom: 7px;
-`;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+`
 
 export const ButtonWrapper = styled.View`
-  flex: 4;
-  padding: 10px 20px 50px 20px;
-  display: flex;
-  flex-direction: column;
+  height: 90px;
   justify-content: space-between;
-`;
-
-export const TopButtons = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
-`;
+`
