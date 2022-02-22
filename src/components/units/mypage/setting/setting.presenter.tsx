@@ -1,8 +1,6 @@
 import * as S from './setting.styles';
-import { View, Switch, Button } from 'react-native';
+import { View, Switch } from 'react-native';
 import React, { useState } from 'react';
-import Modal from 'react-native-modal';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const SettingUI = (props: any) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -13,14 +11,14 @@ const SettingUI = (props: any) => {
 
   return (
     <S.WholeWrapper>
-      <S.HeaderWrapper>
-        <S.Setting>설정</S.Setting>
-      </S.HeaderWrapper>
       <S.UsageWrapper>
-        <S.Title>이용안내</S.Title>
-        <View style={{ borderBottomWidth: 2 }} />
-        <S.InnerContents onPress={toggleModal}>이용약관</S.InnerContents>
-        <Modal isVisible={modalVisible} backdropOpacity={0.5}>
+        <S.TitleWrapper>
+          <S.Title>이용안내</S.Title>
+        </S.TitleWrapper>
+        <S.ContentWrapper>
+          <S.InnerContents>이용약관</S.InnerContents>
+        </S.ContentWrapper>
+        {/* <Modal isVisible={modalVisible} backdropOpacity={0.5}>
           <S.TermsModal style={{ flex: 1 }}>
             <ScrollView>
               <S.Terms>
@@ -46,10 +44,11 @@ const SettingUI = (props: any) => {
               <Button title="약관에 동의합니다." onPress={toggleModal}></Button>
             </ScrollView>
           </S.TermsModal>
-        </Modal>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
-        <S.InnerContents onPress={toggleModal}>개인정보처리방침</S.InnerContents>
-        <Modal isVisible={modalVisible} backdropOpacity={0.5}>
+        </Modal> */}
+        <S.ContentWrapper>
+          <S.InnerContents>개인정보처리방침</S.InnerContents>
+        </S.ContentWrapper>
+        {/* <Modal isVisible={modalVisible} backdropOpacity={0.5}>
           <S.TermsModal style={{ flex: 1 }}>
             <ScrollView>
               <S.Terms>
@@ -75,48 +74,53 @@ const SettingUI = (props: any) => {
               <Button title="정보처리방침에 동의합니다." onPress={toggleModal}></Button>
             </ScrollView>
           </S.TermsModal>
-        </Modal>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
+        </Modal> */}
       </S.UsageWrapper>
       <S.AlarmWrapper>
-        <S.Title>알림</S.Title>
-        <View style={{ borderBottomWidth: 2 }} />
-        <S.SwitchWrapper>
+        <S.TitleWrapper>
+          <S.Title>알림</S.Title>
+        </S.TitleWrapper>
+        <S.ContentWrapper>
           <S.InnerContents>마케팅 수신 동의</S.InnerContents>
-          <Switch
-            trackColor={{ false: '#767577', true: '#81b0ff' }}
-            thumbColor={props.isEnabledFirst ? '#f5dd4b' : '#f4f3f4'}
-            onValueChange={props.toggleSwitchFirst}
-            value={props.isEnabledFirst}
-          />
-        </S.SwitchWrapper>
+          <View style={{ height: 17 }}>
+            <Switch
+              style={{ bottom: 5, transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
+              trackColor={{ false: '#767577', true: '#448800' }}
+              thumbColor={props.isEnabledFirst ? '#ffffff' : '#ffffff'}
+              onValueChange={props.toggleSwitchFirst}
+              value={props.isEnabledFirst}
+            />
+          </View>
+        </S.ContentWrapper>
         <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
-        <S.SwitchWrapper>
+        <S.ContentWrapper>
           <S.InnerContents>알림 및 소리</S.InnerContents>
-          <S.NonSwitch
-            trackColor={{ false: '#767577', true: '#81b0ff' }}
-            thumbColor={props.isEnableSecond ? '#f5dd4b' : '#f4f3f4'}
-            onValueChange={props.toggleSwitchSecond}
-            value={props.isEnableSecond}
-          />
-        </S.SwitchWrapper>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
+          <View style={{ height: 17 }}>
+            <S.NonSwitch
+              style={{ bottom: 5, transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
+              trackColor={{ false: '#767577', true: '#448800' }}
+              thumbColor={props.isEnableSecond ? '#ffffff' : '#ffffff'}
+              onValueChange={props.toggleSwitchSecond}
+              value={props.isEnableSecond}
+            />
+          </View>
+        </S.ContentWrapper>
       </S.AlarmWrapper>
       <S.EtcWrapper>
-        <S.Title>기타</S.Title>
-        <View style={{ borderBottomWidth: 2 }} />
-        <S.Language>
+        <S.TitleWrapper>
+          <S.Title>기타</S.Title>
+        </S.TitleWrapper>
+        <S.ContentWrapper>
           <S.InnerContents>언어설정</S.InnerContents>
           <S.InnerContents>한국어</S.InnerContents>
-        </S.Language>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
-        <S.Version>
+        </S.ContentWrapper>
+        <S.ContentWrapper>
           <S.InnerContents>버전 정보</S.InnerContents>
           <S.InnerContents>1.1.3</S.InnerContents>
-        </S.Version>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
-        <S.InnerContents onPress={() => props.navigation.navigate()}>탈퇴하기</S.InnerContents>
-        <View style={{ borderBottomWidth: 1, borderBottomColor: '#E5E5E5' }} />
+        </S.ContentWrapper>
+        <S.ContentWrapper>
+          <S.InnerContents onPress={() => props.navigation.navigate()}>탈퇴하기</S.InnerContents>
+        </S.ContentWrapper>
       </S.EtcWrapper>
     </S.WholeWrapper>
   );

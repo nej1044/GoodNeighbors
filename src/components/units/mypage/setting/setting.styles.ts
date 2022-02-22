@@ -3,34 +3,38 @@ import styled from '@emotion/native';
 export const WholeWrapper = styled.View`
   width: 100%;
   height: 100%;
-`;
-
-export const HeaderWrapper = styled.View`
-  flex: 0.8;
-  padding: 10px 0px 0px 20px;
-`;
-
-export const Setting = styled.Text`
-  font-size: 20px;
-  font-weight: bold;
+  background-color: #ffffff;
 `;
 
 export const UsageWrapper = styled.View`
-  flex: 2;
+  flex: 1;
   padding: 20px;
 `;
 
 export const Title = styled.Text`
   font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 7px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+`;
+
+export const TitleWrapper = styled.View`
+  padding-bottom: 12px;
+  border-bottom-width: 3px;
+  border-bottom-color: #000000;
 `;
 
 export const InnerContents = styled.Text`
-  font-size: 14px;
-  font-weight: 400;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  letter-spacing: -0.5px;
+`;
+
+export const ContentWrapper = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom-width: 1px;
+  border-bottom-color: #f0f0f0;
 `;
 
 export const UsagePolicy = styled.Text`
@@ -41,15 +45,8 @@ export const UsagePolicy = styled.Text`
 `;
 
 export const AlarmWrapper = styled.View`
-  flex: 2;
+  flex: 1;
   padding: 20px;
-`;
-
-export const SwitchWrapper = styled.View`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
 `;
 
 export const AlarmAgreement = styled.Text`
@@ -67,7 +64,7 @@ export const AlarmSound = styled.Text`
 `;
 
 export const EtcWrapper = styled.View`
-  flex: 4;
+  flex: 3;
   background-color: white;
   padding: 20px;
 `;

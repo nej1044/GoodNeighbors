@@ -13,15 +13,15 @@ import Alarm from '../../../src/components/units/mypage/alarm/alarm.container';
 const Stack = createStackNavigator();
 
 const MypageScreen = ({ navigation }) => {
-  const [deleteMode, setDeleteMode] = useState(false);
+  const [deleteMode, setDeleteMode] = useState(true);
 
   const onPressDelete = () => {
-    setDeleteMode(true);
-    navigation.navigate('alarm', {deleteMode: deleteMode})
-
-    if (deleteMode) {
+    if (deleteMode === undefined || deleteMode === false) {
+      setDeleteMode(true);
+      navigation.navigate('alarm', { deleteMode: deleteMode });
+    } else {
       setDeleteMode(false);
-      
+      navigation.navigate('alarm', { deleteMode: deleteMode });
     }
   };
   return (
@@ -53,12 +53,14 @@ const MypageScreen = ({ navigation }) => {
                   style={{ paddingRight: 31 }}
                 />
               </Pressable>
-              <Icon
-                name="settings-outline"
-                color="rgba(0,0,0,0.4)"
-                size={25}
-                style={{ paddingRight: 50 }}
-              />
+              <Pressable onPress={() => navigation.navigate('setting')}>
+                <Icon
+                  name="settings-outline"
+                  color="rgba(0,0,0,0.4)"
+                  size={25}
+                  style={{ paddingRight: 50 }}
+                />
+              </Pressable>
             </View>
           ),
         }}
@@ -96,7 +98,7 @@ const MypageScreen = ({ navigation }) => {
             <View style={{ flexDirection: 'row' }}>
               <Pressable style={{ flexDirection: 'row' }} onPress={onPressDelete}>
                 <Icon
-                  name={deleteMode ? 'checkmark-outline' : 'trash-outline'}
+                  name={deleteMode ? 'trash-outline' : 'checkmark-outline'}
                   color="#898989"
                   size={23}
                   style={{ paddingRight: 30 }}
@@ -116,9 +118,18 @@ const MypageScreen = ({ navigation }) => {
       <Stack.Screen
         name="setting"
         component={Setting}
-        options={() => ({
-          headerRight: () => <Icon name="ellipsis-vertical" color="#898989" size={20} />,
-        })}
+        options={{
+          title: '설정',
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
+        }}
       />
       <Stack.Screen
         name="post"

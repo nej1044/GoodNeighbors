@@ -16,12 +16,12 @@ export const ProfileImg = styled.Image`
 `;
 
 export const ContentWrap = styled.View`
-  width: 280px;
+  width: ${(props) => (props.deleteMode ? '250px' : '280px')};
   justify-content: space-between;
 `;
 
 export const ContentText = styled.Text`
-  padding-right: 15px;
+  padding-right: ${(props) => (props.deleteMode ? '10px' : '15px')};
   letter-spacing: -0.5px;
 `;
 
