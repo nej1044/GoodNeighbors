@@ -17,12 +17,12 @@ interface IGlobalContext {
 export const GlobalContext = createContext<IGlobalContext>({});
 
 const firebaseConfig = {
-  appId: '1:658624640581:android:7f53ac27eb8a4b09f4d52c',
-  apiKey: 'AIzaSyD041r1L0ujQLrDEEN6LQm09QHcMZ5QVPM',
-  projectId: 'goodneighbors-b9d7e',
-  storageBucket: 'goodneighbors-b9d7e.appspot.com',
-  messagingSenderId: '658624640581',
-  databaseURL: 'goodneighbors-b9d7e.firebaseapp.com',
+  appId: '1:872992369963:ios:2799b8dbd35b15931be96e',
+  apiKey: 'AIzaSyBBC3a_zaO5NkPP3elblUo1jGr-XlMKIxQ',
+  projectId: 'goodneighbors-7aa5f',
+  storageBucket: 'goodneighbors-7aa5f.appspot.com',
+  messagingSenderId: '872992369963',
+  databaseURL: 'goodneighbors-7aa5f.firebaseapp.com',
 };
 
 export const firebaseStorage = !firebase.apps.length

@@ -8,7 +8,7 @@ import { IPropsNavigation } from './social.types';
 const Social = ({ navigation }: IPropsNavigation) => {
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '658624640581-fvgmel5t0e1tsmiimse2k04ss3eq1gng.apps.googleusercontent.com',
+      webClientId: '872992369963-s4ktu6uj793evslqu84dqnaacevq7ijn.apps.googleusercontent.com',
     });
   }, []);
 
