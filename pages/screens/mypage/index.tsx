@@ -6,7 +6,6 @@ import PersonalInformation from '../../../src/components/units/mypage/personalin
 import MypagePost from '../../../src/components/units/mypage/post/post.container';
 import Setting from '../../../src/components/units/mypage/setting/setting.container';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Stamp from '../../../src/components/units/mypage/stamp/stamp.container';
 import { Pressable, View } from 'react-native';
 import Alarm from '../../../src/components/units/mypage/alarm/alarm.container';
 
@@ -31,6 +30,8 @@ const MypageScreen = ({ navigation }) => {
         component={PersonalInformation}
         options={{
           headerTitle: '내정보',
+          headerBackTitleVisible: false,
+          headerBackImage: () => <></>,
           headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 300 },
           headerRight: () => (
             <View style={{ flexDirection: 'row' }}>
@@ -143,16 +144,18 @@ const MypageScreen = ({ navigation }) => {
       <Stack.Screen
         name="post"
         component={MypagePost}
-        options={() => ({
-          headerRight: () => <Icon name="ellipsis-vertical" color="#898989" size={20} />,
-        })}
-      />
-      <Stack.Screen
-        name="stamp"
-        component={Stamp}
-        options={() => ({
-          headerRight: () => <Icon name="ellipsis-vertical" color="#898989" size={20} />,
-        })}
+        options={{
+          title: '커뮤니티 글 목록',
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
+        }}
       />
     </Stack.Navigator>
   );

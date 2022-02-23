@@ -49,6 +49,7 @@ export const BtnTitle = styled.Text`
 `;
 
 export const IntroWrapper = styled.Pressable`
+  position: relative;
   width: 100%;
   flex-direction: row;
   align-items: center;
@@ -65,4 +66,26 @@ export const BottomWrapper = styled.View`
 export const BottomTitle = styled.Text`
   color: #989898;
   font-size: 12px;
+`;
+
+export const PopupWrap = styled.View`
+  position: absolute;
+  left: 24px;
+  bottom: 240px;
+  width: 156px;
+  height: 60px;
+  padding: 11px 10px 11px 11px;
+  border: 1px solid #f0f0f0;
+  background-color: white;
+`;
+
+export const CloseBtn = styled.Pressable`
+  position: absolute;
+  right: 5px;
+  top: 5px;
+`;
+
+export const PopupText = styled.Text`
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
 `;

@@ -43,7 +43,7 @@ const ValidUI = (props) => {
             />
           )}
         </S.Auth>
-        <S.IntroWrapper onPress={props.onPressVisible}>
+        <S.IntroWrapper onPress={()=> props.setIsPopup(!props.isPopup)}>
           <S.BottomTitle>인증번호가 오지 않나요?</S.BottomTitle>
           <Icon name="help-circle-outline" size={15} color="#989898" style={{ marginLeft: 2 }} />
         </S.IntroWrapper>
@@ -62,6 +62,16 @@ const ValidUI = (props) => {
             </S.BottomTitle>
           )}
         </S.BottomWrapper>
+        {props.isPopup && (
+          <S.PopupWrap>
+            <S.CloseBtn onPress={()=> props.setIsPopup(!props.isPopup)}>
+              <Icon name="close" size={12} color="rgba(0,0,0,0.2)" />
+            </S.CloseBtn>
+            <S.PopupText>
+              스팸 문자를 확인해 주시고,        스팸문자로 등록되어 있지 않다면 다시 인증을 눌러주세요!
+            </S.PopupText>
+          </S.PopupWrap>
+        )}
       </S.Wrapper>
     </>
   );

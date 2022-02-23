@@ -88,13 +88,13 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="signup"
           component={LoginScreen}
           options={() => ({
             headerShown: false,
           })}
-        ></Stack.Screen> */}
+        ></Stack.Screen>
         <Stack.Screen
           name="mainScreen"
           component={MainScreen}

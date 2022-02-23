@@ -22,12 +22,12 @@ const NoticeUIItem = (props) => {
 };
 
 const NoticeUI = () => {
-  const [noticeArr, setNoticeArr] = React.useState(new Array(10).fill(1));
+  const noticeArr = new Array(10).fill(1);
 
   return (
     <ScrollView style={{ backgroundColor: '#ffffff' }}>
       {noticeArr.map((_, idx) => (
-        <NoticeUIItem key={idx} idx={idx} alarmArr={noticeArr} setAlarmArr={setNoticeArr} />
+        <NoticeUIItem key={idx} idx={idx} />
       ))}
     </ScrollView>
   );

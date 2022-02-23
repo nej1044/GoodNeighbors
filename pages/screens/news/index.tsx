@@ -12,6 +12,8 @@ const NewsScreen = () => {
         component={NewsMain}
         options={() => ({
           headerTitle: '소식',
+          headerBackTitleVisible: false,
+          headerBackImage: () => <></>,
           headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 350 },
         })}
       />

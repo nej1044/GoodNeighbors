@@ -6,7 +6,7 @@ const Vaild = ({ route, navigation }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [tempNumber, setTempNumber] = useState<string>('');
   const [, setAuthNumber] = useState<string>('');
-  const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [isPopup, setIsPopup] = useState(false)
 
   const onChangeTempNumber = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
     setAuthNumber(event.nativeEvent.text);
@@ -23,10 +23,6 @@ const Vaild = ({ route, navigation }) => {
     navigation.navigate('validConfirm', {isPassword: route.params.isPassword})
   };
 
-  const onPressVisible = () => {
-    setModalVisible((prev) => !prev);
-  };
-
   return (
     <ValidUI
       onChangeTempNumber={onChangeTempNumber}
@@ -36,8 +32,8 @@ const Vaild = ({ route, navigation }) => {
       isAuth={isAuth}
       route={route}
       navigation={navigation}
-      onPressVisible={onPressVisible}
-      modalVisible={modalVisible}
+      isPopup={isPopup}
+      setIsPopup={setIsPopup}
     />
   );
 };

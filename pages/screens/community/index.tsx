@@ -49,6 +49,8 @@ const CommunityScreen = ({ navigation, route }) => {
         options={() => ({
           headerTitle: '커뮤니티',
           headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 300 },
+          headerBackTitleVisible: false,
+          headerBackImage: () => (<></>),
           headerRight: () => (
             <Pressable
               style={{ flexDirection: 'row' }}
