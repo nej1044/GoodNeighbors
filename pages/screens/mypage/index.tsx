@@ -111,9 +111,18 @@ const MypageScreen = ({ navigation }) => {
       <Stack.Screen
         name="notice"
         component={Notice}
-        options={() => ({
-          headerRight: () => <Icon name="ellipsis-vertical" color="#898989" size={20} />,
-        })}
+        options={{
+          title: '공지사항',
+          headerTitleStyle: { fontSize: 22, fontWeight: '700', width: 250 },
+          headerBackTitleVisible: false,
+          headerBackImage: () => (
+            <Icon
+              name="arrow-back-outline"
+              size={25}
+              style={{ paddingLeft: 25, paddingTop: 15, paddingBottom: 40 }}
+            />
+          ),
+        }}
       />
       <Stack.Screen
         name="setting"

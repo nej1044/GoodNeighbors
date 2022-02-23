@@ -215,7 +215,6 @@ export const WriteImg = styled.Image`
 `
 
 export const ModalWrap = styled.View`
-  display: flex;
   justify-content: flex-end;
   width: 100%;
   height: 100%;

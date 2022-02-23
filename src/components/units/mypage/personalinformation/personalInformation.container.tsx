@@ -5,7 +5,7 @@ import { FETCH_USER_LOGGED_IN, LOG_OUT_USER } from './personalinformation.querie
 import { useQuery, useMutation } from '@apollo/client';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const PersonalInformation = ({ navigation }: IPropsPersonalinformation) => {
+const PersonalInformation = ({ navigation, route }: IPropsPersonalinformation) => {
   const [logoutUser] = useMutation(LOG_OUT_USER);
   const { data } = useQuery(FETCH_USER_LOGGED_IN);
 
@@ -20,7 +20,12 @@ const PersonalInformation = ({ navigation }: IPropsPersonalinformation) => {
   };
 
   return (
-    <PersonalInformationUI navigation={navigation} data={data} onPressLogout={onPressLogout} />
+    <PersonalInformationUI
+      navigation={navigation}
+      data={data}
+      onPressLogout={onPressLogout}
+      route={route}
+    />
   );
 };
 
