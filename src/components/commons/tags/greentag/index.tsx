@@ -8,7 +8,7 @@ interface IPropsGreenTag {
   padding?: string;
 }
 
-const Tag = styled.View`
+const Tag = styled.Pressable`
   margin-right: 8px;
   margin-bottom: 10px;
   padding: 8px 12px;
@@ -28,7 +28,12 @@ const TagText = styled.Text`
 
 const GreenTag = (props: IPropsGreenTag) => {
   return (
-    <Tag fontSize={props.fontSize} onPress={props.onPress} padding={props.padding}>
+    <Tag
+      onPress={props.onPress}
+      fontSize={props.fontSize}
+      onPress={props.onPress}
+      padding={props.padding}
+    >
       <TagText fontSize={props.fontSize}># {props.text}</TagText>
     </Tag>
   );

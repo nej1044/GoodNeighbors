@@ -9,8 +9,9 @@ interface IPropsWhiteTag {
   margin?: string;
 }
 
-const Tag = styled.View`
+const Tag = styled.Pressable`
   margin-right: 8px;
+  margin-bottom: 10px;
   padding: 8px 12px;
   border: 1px solid #9f9f9f;
   border-radius: 20px;

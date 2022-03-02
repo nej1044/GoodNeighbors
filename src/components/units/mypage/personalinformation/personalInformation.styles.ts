@@ -185,13 +185,66 @@ export const ModalWrap = styled.View`
 `;
 
 export const ModalBody = styled.View`
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 440px;
-  padding: 26px;
+  padding-bottom: 70px;
   background-color: #ffffff;
   border-radius: 16px 16px 0px 0px;
 `;
 
 export const Close = styled.Pressable`
   align-items: flex-end;
+`;
+
+export const ModalHash = styled.View`
+  width: 100%;
+  height: 624px;
+  padding: 26px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: #ffffff;
+`;
+
+export const ModalHeader = styled.View`
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin-top: 70px;
+`;
+
+export const ModalTitle = styled.Text`
+  width: 180px;
+  color: black;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+`;
+
+export const ModalSubtitle = styled.Text`
+  width: 200px;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: -0.5px;
+`;
+
+export const ModalTagWrap = styled.View`
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 30px;
+`;
+
+export const SubmitBtn = styled.Pressable`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  border-radius: 8px;
+  background-color: #448800;
+`;
+
+export const SubmitText = styled.Text`
+  color: #ffffff;
+  font-size: 16px;
 `;

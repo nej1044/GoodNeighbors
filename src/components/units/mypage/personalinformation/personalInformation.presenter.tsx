@@ -7,11 +7,28 @@ import GreenButton from '../../../commons/buttons/greenbutton';
 import WhiteButton from '../../../commons/buttons/whitebutton';
 import { Image } from 'react-native';
 import { ProgressBar } from 'react-native-paper';
+import GreenTag from '../../../commons/tags/greentag';
+import WhiteTag from '../../../commons/tags/whitetag';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();
 
 function PIScreen(props) {
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const hashArr = [
+    '정기후원',
+    '단체후원',
+    '소액후원',
+    '기부',
+    '캠페인',
+    '챌린지',
+    '1:1후원',
+    '국내주거위기아동후원',
+    '국내위기가정후원',
+    '해외아동결연',
+    '자원봉사',
+    '재능기부',
+  ];
   return (
     <>
       <C.TabInnerWrapper>
@@ -28,7 +45,7 @@ function PIScreen(props) {
             <R.Text>후원이력</R.Text>
           </C.Content>
           <C.Content>
-            <R.Text>관심 카테고리 설정</R.Text>
+            <R.Text onPress={() => setModalVisible(true)}>관심 카테고리 설정</R.Text>
           </C.Content>
         </C.ContentWrap>
         <C.ContentWrap>
@@ -63,6 +80,46 @@ function PIScreen(props) {
           />
         </C.ButtonWrapper>
       </C.TabInnerWrapper>
+      <R.Modal
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          R.Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <C.ModalWrap>
+          <C.ModalHash>
+            <C.Close onPress={() => setModalVisible(!modalVisible)}>
+              <Icon name="close" size={20} />
+            </C.Close>
+            <R.View>
+              <C.ModalHeader>
+                <C.ModalTitle>
+                  <R.Text style={{ fontWeight: 'bold' }}>관심있는해시태그</R.Text>를 설정해보세요!
+                </C.ModalTitle>
+                <C.ModalSubtitle>
+                  선택한 해시태그의 후원이 추천되고, 알림을 받을 수 있어요.
+                </C.ModalSubtitle>
+              </C.ModalHeader>
+              <C.ModalBody>
+                <C.ModalTagWrap>
+                  {hashArr.map((el, idx) =>
+                    props.userHash.includes(el) ? (
+                      <GreenTag key={idx} text={el} onPress={props.setHash(el)} />
+                    ) : (
+                      <WhiteTag key={idx} text={el} onPress={props.setHash(el)} />
+                    ),
+                  )}
+                </C.ModalTagWrap>
+                <C.SubmitBtn onPress={() => setModalVisible(!modalVisible)}>
+                  <C.SubmitText>확인</C.SubmitText>
+                </C.SubmitBtn>
+              </C.ModalBody>
+            </R.View>
+          </C.ModalHash>
+        </C.ModalWrap>
+      </R.Modal>
     </>
   );
 }
@@ -253,7 +310,13 @@ const PersonalInformationUI = (props: IPropsPersonalinformationUI) => {
                 props.navigation.navigate('개인정보확인/변경');
               },
             }}
-            children={() => <PIScreen navigation={props.navigation} />}
+            children={() => (
+              <PIScreen
+                navigation={props.navigation}
+                userHash={props.userHash}
+                setHash={props.setHash}
+              />
+            )}
           />
           <Tab.Screen
             name="스탬프"
