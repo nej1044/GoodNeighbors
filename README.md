@@ -35,7 +35,7 @@
 <p align="center">
     <img width="250" src="./public/images/readme/splashScreen.gif">
     <img width="250" src="./public/images/readme/graphQLLogin.gif">
-    <img width="250" src="./public/images/readme/GoogleSocialLogin.gif">
+    <img width="250" src="./public/images/readme/googleSocialLogin.gif">
 </p>
 
 react-native-splash-screen을 사용하여 splash screen 구현
