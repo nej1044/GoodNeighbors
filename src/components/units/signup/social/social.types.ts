@@ -18,4 +18,5 @@ export type IPropsNavigation = {
 export interface IPropsSocialUI {
   navigation: Props;
   onGoogleButtonPress: () => void;
+  onPressLogin: () => void;
 }

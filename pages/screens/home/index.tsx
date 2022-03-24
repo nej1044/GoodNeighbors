@@ -9,11 +9,17 @@ import HomePayment from '../../../src/components/units/home/homePayment/HomePaym
 import Payment from '../../../src/components/units/home/Payment/index';
 import PaymentResult from '../../../src/components/units/home/complete/index';
 import HomeSearch from '../../../src/components/units/home/search/HomeSearch.container';
-import { Image, Pressable, View } from 'react-native';
+import { Image, Pressable, Share, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Menu, MenuOption, MenuOptions, MenuTrigger } from 'react-native-popup-menu';
 
 const Stack = createStackNavigator();
+
+const share = () => {
+  Share.share({
+    message: 'Share this posting with your friends!',
+  });
+};
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -137,29 +143,12 @@ const HomeScreen = ({ navigation }) => {
                 style={{ paddingTop: 15, paddingRight: 10 }}
                 onPress={() => share()}
               />
-              <Menu>
-                <MenuTrigger>
-                  <Icon
-                    name="bookmark-outline"
-                    color="white"
-                    size={24}
-                    style={{ paddingRight: 20, paddingTop: 15 }}
-                  />
-                </MenuTrigger>
-                <MenuOptions optionsContainerStyle={{ width: 100 }}>
-                  <MenuOption
-                    onSelect={() => {
-                      navigation.navigate('write', {
-                        isEdit: true,
-                        // boardId: route.params.params.boardId,
-                      });
-                    }}
-                    text="수정"
-                    style={{ padding: 10 }}
-                  />
-                  <MenuOption text="삭제" style={{ padding: 10 }} />
-                </MenuOptions>
-              </Menu>
+              <Icon
+                name="bookmark-outline"
+                color="white"
+                size={24}
+                style={{ paddingRight: 20, paddingTop: 15 }}
+              />
             </View>
           ),
         })}

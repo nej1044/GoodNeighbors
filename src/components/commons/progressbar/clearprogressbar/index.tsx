@@ -83,11 +83,14 @@ export default function ClearProgressBar(props: IPropsClearProgressBar) {
     <>
       <Wrapper>
         <ProgressInfo>
-          <DDay>D-{displayDDay(start, end)}</DDay>
-          <Percentage>{per}%</Percentage>
+          {/* <DDay>D-{displayDDay(start, end)}</DDay> */}
+          <DDay>D-3</DDay>
+          {/* <Percentage>{per}%</Percentage> */}
+          <Percentage>80%</Percentage>
         </ProgressInfo>
         <Bar height={props.height}>
-          <Progress per={`${per}%`}></Progress>
+          {/* <Progress per="{`${per}%`}"></Progress> */}
+          <Progress per="80%"></Progress>
         </Bar>
       </Wrapper>
     </>

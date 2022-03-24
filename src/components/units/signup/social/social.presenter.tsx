@@ -12,19 +12,11 @@ const SocialUI = (props: IPropsSocialUI) => {
         <S.Title>굿네이버스</S.Title>
       </S.TitleWrapper>
       <S.BodyWrapper>
-        <S.SocialBtn
-          onPress={() => {
-            props.navigation.navigate('mainScreen');
-          }}
-        >
+        <S.SocialBtn onPress={props.onPressLogin}>
           <S.SocialLogo source={require('../../../../../public/images/signup/naverLogo.jpg')} />
           <S.SocialTitle>네이버로 시작하기</S.SocialTitle>
         </S.SocialBtn>
-        <S.SocialBtn
-          onPress={() => {
-            props.navigation.navigate('mainScreen');
-          }}
-        >
+        <S.SocialBtn onPress={props.onPressLogin}>
           <S.SocialLogo source={require('../../../../../public/images/signup/kakaoLogo.jpg')} />
           <S.SocialTitle>카카오로 시작하기</S.SocialTitle>
         </S.SocialBtn>

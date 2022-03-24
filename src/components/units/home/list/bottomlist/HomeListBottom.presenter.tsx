@@ -52,7 +52,6 @@ export default function HomeListBottomUI(props: IPropsHomeListBottomUI) {
                         key={el._id}
                         text={`#${el.tags[0]}`}
                         fontSize='8px'
-                        padding='4px 8px'
                       />
                       {props.category !== '결연아동' && (
                         <ClearProgressBar createdAt={el.createdAt} height={'2px'} id={el._id} />

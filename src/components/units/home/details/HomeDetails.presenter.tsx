@@ -22,12 +22,7 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
   const children = props.data?.fetchUseditem.name.split('/')[0] === '결연아동';
   const category = props.data?.fetchUseditem.name.split('/')[0];
   const el = props.data?.fetchUseditem;
-
-  async function onShare() {
-    await Share.share({
-      message: '굿네이버스',
-    });
-  }
+  
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -126,7 +121,7 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
             <E.SummaryContent>{props.data?.fetchUseditem.contents}</E.SummaryContent>
             <E.Tags>
               {props.data?.fetchUseditem.tags?.map((el, index) => (
-                <WhiteTag key={index} text={el} fontSize="10px" padding="8px 12px" />
+                <WhiteTag key={index} text={el} fontSize="10px" />
               ))}
             </E.Tags>
             {!children && (
