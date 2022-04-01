@@ -1,5 +1,4 @@
 import React from 'react';
-import { Query } from '../../../../commons/types/generated/types';
 import ConfirmationUI from './confirmation.presenter';
 import { INavigation } from './confirmation.types';
 import { withAuth } from '../../../commons/withAuth/withAuth';

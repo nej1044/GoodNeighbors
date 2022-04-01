@@ -2,8 +2,9 @@ import React from 'react';
 import * as S from './validConfirm.styles';
 import * as R from 'react-native';
 import GreenButton from '../../../commons/buttons/greenbutton';
+import { IValidConfirmProps } from './validConfirm.types';
 
-const ValidConfirmUI = (props) => {
+const ValidConfirmUI = (props: IValidConfirmProps) => {
   return (
     <>
       <S.Wrapper>

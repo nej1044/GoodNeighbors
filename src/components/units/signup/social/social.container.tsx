@@ -32,7 +32,7 @@ const Social = ({ navigation }: IPropsNavigation) => {
         Alert.alert('로그인을 해주세요');
       }
       return auth().signInWithCredential(googleCredential);
-    } catch (error) {
+    } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log(statusCodes.SIGN_IN_CANCELLED);
       } else if (error.code === statusCodes.IN_PROGRESS) {

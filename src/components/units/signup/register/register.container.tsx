@@ -17,7 +17,7 @@ const Register = ({ navigation }: IPropsNavigation) => {
   const [passwordConfirm, setPasswordConfirm] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [tempNumber, setTempNumber] = useState<string>('');
-  const [authNumber, setAuthNumber] = useState<string>('');
+  const [, setAuthNumber] = useState<string>('');
 
   const [emailError, setEmailError] = useState<boolean>(false);
   const [passwordError, setPasswordError] = useState<boolean>(false);

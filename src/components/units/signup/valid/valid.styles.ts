@@ -85,6 +85,8 @@ export const CloseBtn = styled.Pressable`
   top: 5px;
 `;
 
+export const PopupTextWrap = styled.View``;
+
 export const PopupText = styled.Text`
   color: rgba(0, 0, 0, 0.7);
   font-size: 10px;

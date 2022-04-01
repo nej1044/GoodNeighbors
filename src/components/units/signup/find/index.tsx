@@ -1,6 +1,24 @@
 import React from 'react';
 import * as R from 'react-native';
 import styled from '@emotion/native';
+import { RouteProp } from '@react-navigation/core';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  signup: { userName: string; isPassword: boolean };
+  mainScreen: undefined;
+  login: undefined;
+  valid: { isPassword: boolean; isPhone: boolean };
+};
+
+type INavigationProps = NativeStackNavigationProp<RootStackParamList, 'signup'>;
+
+type IRouteProps = RouteProp<RootStackParamList, 'signup'>;
+
+interface IFindProps {
+  navigation: INavigationProps;
+  route: IRouteProps;
+}
 
 const Wrapper = styled.View`
   flex: 1;
@@ -46,7 +64,7 @@ export const BottomTitle = styled.Text`
   font-size: 12px;
 `;
 
-const Find = ({ navigation, route }) => {
+const Find = ({ navigation, route }: IFindProps) => {
   return (
     <>
       <Wrapper>

@@ -6,6 +6,8 @@ import { Mutation } from '../../../../commons/types/generated/types';
 type RootStackParamList = {
   login: undefined;
   confirmation: undefined;
+  mainScreen: undefined;
+  find: { isPassword: boolean };
 };
 
 type Props = NativeStackNavigationProp<RootStackParamList, 'login'>;
@@ -21,4 +23,5 @@ export interface IPropsLoginUI {
   onPressLogin: () => void;
   onChangeEmail: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
   onChangePassword: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+  navigation: Props;
 }

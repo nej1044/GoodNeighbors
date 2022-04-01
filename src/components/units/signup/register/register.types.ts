@@ -4,7 +4,7 @@ import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import { Mutation } from '../../../../commons/types/generated/types';
 
 type RootStackParamList = {
-  confirmation: { userName: string };
+  confirmation: { userName?: string };
 };
 
 type Props = NativeStackNavigationProp<RootStackParamList, 'confirmation'>;

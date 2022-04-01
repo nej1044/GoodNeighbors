@@ -4,8 +4,9 @@ import GreenButton from '../../../commons/buttons/greenbutton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as S from './valid.styles';
 import * as R from 'react-native';
+import { IValidProps } from './valid.types';
 
-const ValidUI = (props) => {
+const ValidUI = (props: IValidProps) => {
   return (
     <>
       <S.Wrapper>
@@ -43,7 +44,7 @@ const ValidUI = (props) => {
             />
           )}
         </S.Auth>
-        <S.IntroWrapper onPress={()=> props.setIsPopup(!props.isPopup)}>
+        <S.IntroWrapper onPress={() => props.setIsPopup(!props.isPopup)}>
           <S.BottomTitle>인증번호가 오지 않나요?</S.BottomTitle>
           <Icon name="help-circle-outline" size={15} color="#989898" style={{ marginLeft: 2 }} />
         </S.IntroWrapper>
@@ -64,12 +65,13 @@ const ValidUI = (props) => {
         </S.BottomWrapper>
         {props.isPopup && (
           <S.PopupWrap>
-            <S.CloseBtn onPress={()=> props.setIsPopup(!props.isPopup)}>
+            <S.CloseBtn onPress={() => props.setIsPopup(!props.isPopup)}>
               <Icon name="close" size={12} color="rgba(0,0,0,0.2)" />
             </S.CloseBtn>
-            <S.PopupText>
-              스팸 문자를 확인해 주시고,        스팸문자로 등록되어 있지 않다면 다시 인증을 눌러주세요!
-            </S.PopupText>
+            <S.PopupTextWrap>
+              <S.PopupText>스팸 문자를 확인해 주시고,</S.PopupText>
+              <S.PopupText>스팸문자로 등록되어 있지 않다면 다시 인증을 눌러주세요!</S.PopupText>
+            </S.PopupTextWrap>
           </S.PopupWrap>
         )}
       </S.Wrapper>

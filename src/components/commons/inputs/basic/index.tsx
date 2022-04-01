@@ -17,7 +17,7 @@ interface IPropsInputBasic {
   marginBottom?: string;
   placeholder?: string;
   secureTextEntry?: boolean;
-  onChange: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+  onChange?: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
   value?: string;
 }
 

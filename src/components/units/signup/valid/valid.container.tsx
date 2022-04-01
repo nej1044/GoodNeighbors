@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Alert, NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
 import ValidUI from './valid.presenter';
+import { IPropsValid } from './valid.types';
 
-const Vaild = ({ route, navigation }) => {
+const Vaild = ({ route, navigation }: IPropsValid) => {
   const [isAuth, setIsAuth] = useState(false);
   const [tempNumber, setTempNumber] = useState<string>('');
   const [, setAuthNumber] = useState<string>('');
-  const [isPopup, setIsPopup] = useState(false)
+  const [isPopup, setIsPopup] = useState(false);
 
   const onChangeTempNumber = (event: NativeSyntheticEvent<TextInputChangeEventData>) => {
     setAuthNumber(event.nativeEvent.text);
@@ -20,7 +21,7 @@ const Vaild = ({ route, navigation }) => {
   };
 
   const onPressAuth = () => {
-    navigation.navigate('validConfirm', {isPassword: route.params.isPassword})
+    navigation.navigate('validConfirm', { isPassword: route.params.isPassword });
   };
 
   return (
