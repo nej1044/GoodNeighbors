@@ -77,7 +77,7 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                           ) : (
                             <Icon
                               name="bookmark"
-                              size={20}
+                              size={24}
                               color={'#448800'}
                               onPress={props.onPressPick(el)}
                             />
@@ -86,7 +86,6 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                       </E.CardDetails>
                     </E.Card>
                   ))
-                  .reverse()
                   .splice(0, 4)}
               </ScrollView>
             </E.SelectionList>
@@ -156,6 +155,7 @@ export default function HomeCampaignUI(props: IPropsHomeCampaignUI) {
                     </E.RecommendCardDetails>
                   </E.RecommendCard>
                 ))
+                .reverse()
                 .splice(0, 4)}
             </E.RecommendList>
           </E.RecommendWrapper>

@@ -12,10 +12,9 @@ export interface IPropsHomeCampaignUI {
 }
 
 type RootStackParamList = {
-  home: { screen: string };
-  community: { screen: string };
-  news: undefined;
-  mypage: undefined;
+  home: undefined;
+  homeDetails: { useditemId?: string };
+  homelist: undefined;
 };
 
 type ProfileScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'home'>;

@@ -33,15 +33,14 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                           }}
                         />
                         <E.CardTag>
-                          <ColoredTag
-                            text={`#${el.tags[el.tags.length - 1]}`}
-                            fontSize="8px"
-                          />
+                          <ColoredTag text={`#${el.tags?.[0]}`} fontSize="8px" />
                         </E.CardTag>
                       </E.ImgWrapper>
                       <E.CardDetails>
                         <E.DetailsContent>
-                          <E.ContentTitle>{el.name.split('/')[1]}</E.ContentTitle>
+                          <E.ContentTitle>
+                            {el.name.split('/')[1]} {el.tags?.[3]}
+                          </E.ContentTitle>
                           <E.ContentRemark numberOfLines={1} ellipsizeMode="tail">
                             {el.remarks}
                           </E.ContentRemark>
@@ -69,7 +68,7 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                     </E.Card>
                   ))
                   .reverse()
-                  .slice(0, 3)}
+                  .slice(0, 4)}
               </E.SelectionList>
             </ScrollView>
           </E.SelectionWrapper>
@@ -99,18 +98,18 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                         props.navigation.navigate('homeDetails', { useditemId: el._id })
                       }
                     >
-                      <E.ChildName>{el.name.split('/')[1]}</E.ChildName>
+                      <E.ChildName>
+                        {el.name.split('/')[1]} {el.tags?.[3]}
+                      </E.ChildName>
                       <E.ChildBio numberOfLines={2} ellipsizeMode="tail">
-                        {el.remarks}
+                        {el.contents}
                       </E.ChildBio>
                       <E.ChildrenTags key={el._id}>
-                        {el.tags?.map((el, index) => (
-                          <ColoredTag
-                            key={index}
-                            text={`#${el}`}
-                            fontSize='8px'
-                          />
-                        ))}
+                        {el.tags
+                          ?.map((el, index) => (
+                            <ColoredTag key={index} text={`#${el}`} fontSize="8px" />
+                          ))
+                          .splice(0, 3)}
                       </E.ChildrenTags>
                     </E.ChildAbout>
                     <E.ChildBookmark>
@@ -135,7 +134,7 @@ export default function HomeChildrenUI(props: IPropsHomeChildrenUI) {
                   </E.ChildDetails>
                 </E.ChildrenList>
               ))
-              .slice(0, 4)}
+              .slice(0, 3)}
           </E.RecommendWrapper>
         </E.Wrapper>
       </ScrollView>

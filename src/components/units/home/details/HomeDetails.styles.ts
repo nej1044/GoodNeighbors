@@ -56,6 +56,21 @@ export const DetailRemark = styled.Text`
   letter-spacing: -0.5px;
 `;
 
+export const ChildrenTextWrap = styled.View`
+  flex-direction: row;
+`;
+
+export const ChildrenText = styled.Text`
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  letter-spacing: -0.5px;
+  margin-right: 5px;
+`;
+
+export const ChildrenBoldText = styled(ChildrenText)`
+  font-weight: 700;
+`;
+
 export const InfoPeriod = styled.View``;
 
 export const PeriodTxt = styled.Text`
@@ -99,7 +114,7 @@ export const SummaryContent = styled.Text`
   margin-bottom: 15px;
   color: #000;
   font-size: 14px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
 `;
 
 export const Tags = styled.View`

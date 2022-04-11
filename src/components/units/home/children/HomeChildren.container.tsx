@@ -64,7 +64,7 @@ export default function HomeChildren({ navigation }: IPropsNavigation) {
         ],
       });
     } catch (error) {
-      console.log(error.message);
+      if (error instanceof Error) console.log(error.message);
     }
   };
 

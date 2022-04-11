@@ -22,7 +22,7 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
   const children = props.data?.fetchUseditem.name.split('/')[0] === '결연아동';
   const category = props.data?.fetchUseditem.name.split('/')[0];
   const el = props.data?.fetchUseditem;
-  
+
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -78,7 +78,19 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
                 <E.InfoDetailTitle>
                   {props.data?.fetchUseditem.name.split('/')[1]}
                 </E.InfoDetailTitle>
-                <E.DetailRemark>{props.data?.fetchUseditem.remarks.split('!')[0]}</E.DetailRemark>
+                {children && (
+                  <E.ChildrenTextWrap>
+                    <E.ChildrenText>나이</E.ChildrenText>
+                    <E.ChildrenBoldText>{props.data?.fetchUseditem.tags?.[3]}</E.ChildrenBoldText>
+                    <E.ChildrenText>성별</E.ChildrenText>
+                    <E.ChildrenBoldText>{props.data?.fetchUseditem.tags?.[2]}</E.ChildrenBoldText>
+                    <E.ChildrenText>나라</E.ChildrenText>
+                    <E.ChildrenBoldText>{props.data?.fetchUseditem.tags?.[0]}</E.ChildrenBoldText>
+                  </E.ChildrenTextWrap>
+                )}
+                {!children && (
+                  <E.DetailRemark>{props.data?.fetchUseditem.remarks.split('!')[0]}</E.DetailRemark>
+                )}
               </E.InfoDetails>
 
               {!children ? (
@@ -120,9 +132,10 @@ const HomeDetailsUI = (props: IPropsHomeDetailsUI) => {
             )}
             <E.SummaryContent>{props.data?.fetchUseditem.contents}</E.SummaryContent>
             <E.Tags>
-              {props.data?.fetchUseditem.tags?.map((el, index) => (
-                <WhiteTag key={index} text={el} fontSize="10px" />
-              ))}
+              {!children &&
+                props.data?.fetchUseditem.tags?.map((el, index) => (
+                  <WhiteTag key={index} text={el} fontSize="10px" />
+                ))}
             </E.Tags>
             {!children && (
               <E.Progress>

@@ -9,6 +9,7 @@ import { firebase } from '@react-native-firebase/firestore';
 import { MenuProvider } from 'react-native-popup-menu';
 import Navigation from './pages/navigation';
 import SplashScreen from 'react-native-splash-screen';
+import { LogBox, YellowBox } from 'react-native';
 
 interface IGlobalContext {
   setAccessToken?: Dispatch<SetStateAction<string>>;
@@ -31,6 +32,8 @@ export const firebaseStorage = !firebase.apps.length
 
 const App = () => {
   const [accessToken, setMyAccessToken] = useState('');
+
+  LogBox.ignoreAllLogs();
 
   useEffect(() => {
     try {

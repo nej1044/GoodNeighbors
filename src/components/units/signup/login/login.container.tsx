@@ -37,7 +37,8 @@ const Login = ({ navigation }: IPropsNavigation) => {
       AsyncStorage.setItem('refreshToken', result.data?.loginUser.accessToken || '');
       console.log(result.data?.loginUser.accessToken);
       setAccessToken?.(result.data?.loginUser.accessToken || '');
-      navigation.navigate('mainScreen');
+      // navigation.navigate('mainScreen');
+      navigation.reset({ routes: [{ name: 'mainScreen' }] });
     } catch (error) {
       if (error instanceof Error) console.log('LoginError:', error.message);
     }
